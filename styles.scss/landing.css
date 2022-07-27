@@ -11,13 +11,13 @@
 
 html,
 body {
+  font-family: "Avenir", sans serif;
   overflow-x: hidden;
-  font-family: "Avenir", "sans serif";
 }
 
 @font-face {
   font-family: "Avenir";
-  src: url("./Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff2") format("woff2"), url("./Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff") format("woff"), url("./Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+  src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "Avenir";
@@ -31,22 +31,16 @@ body {
 }
 .navigation {
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   background-color: #323232;
   color: #ffffff;
   display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.navigation__band {
-  display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.navigation__tab {
-  padding: 1rem;
+.navigation__sub {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .navigation__tab--link {
@@ -59,17 +53,52 @@ a:visited {
 
 h1 {
   text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .hero {
   background-image: url(../Assets/Images/hero-bio.jpg);
-  height: 40vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  position: relative;
 }
 
-h2 {
-  padding-top: 1.5rem;
+.hero__title {
+  padding: 1.5rem 0 1rem 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 2rem;
+  color: #ffffff;
+  position: absolute;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.about__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+.about__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gallery__img {
+  max-width: 100%;
+  height: auto;
   padding-bottom: 1rem;
 }/*# sourceMappingURL=landing.css.map */
