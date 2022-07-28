@@ -38,24 +38,27 @@ body {
 .navigation__logo {
   width: 30%;
   margin: auto;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .navigation__sub {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 4rem 0 0;
+  padding: 1rem 4rem 0 0;
 }
 
 .navigation__tab {
   text-decoration: none;
   padding-left: 3rem;
+  padding-bottom: 1rem;
+  color: #e1e1e1;
 }
 
 .navigation__tab--active {
-  border-bottom: 3px #e1e1e1 solid;
-  border-width: 50%;
-  padding-bottom: 0.5rem;
+  color: #ffffff;
+  font-weight: 700;
+  border-bottom: 3px solid #ffffff;
+  width: 50%;
 }
 
 a:visited {
@@ -134,4 +137,41 @@ section__body--paragraph {
   max-width: 100%;
   height: auto;
   padding-bottom: 1rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.footer__contact--heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  padding-top: 1.5rem;
+}
+
+.footer__contact {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.footer__icon {
+  padding-right: 1.5rem;
+}
+
+.footer__contact--name {
+  padding-bottom: 1rem;
+  padding-left: 0;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+.footer__contact--logo {
+  padding-top: 4rem;
 }/*# sourceMappingURL=landing.css.map */
