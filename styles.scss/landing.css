@@ -12,7 +12,7 @@
 html,
 body {
   font-family: "Avenir", sans serif;
-  overflow-x: hidden;
+  max-width: 100%;
 }
 
 @font-face {
@@ -30,45 +30,44 @@ body {
   font-weight: demi;
 }
 .navigation {
-  width: 100vw;
-  height: 13vh;
   background-color: #323232;
-  color: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
-.navigation__sub {
-  display: flex;
-  justify-content: space-evenly;
+.navigation__logo {
+  width: 30%;
+  margin: auto;
+  margin-top: 1rem;
 }
 
-.navigation__tab--link {
+.navigation__sub {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 4rem 0 0;
+}
+
+.navigation__tab {
   text-decoration: none;
+  padding-left: 3rem;
+}
+
+.navigation__tab--active {
+  border-bottom: 3px #e1e1e1 solid;
+  border-width: 50%;
+  padding-bottom: 0.5rem;
 }
 
 a:visited {
   color: white;
 }
 
-h1 {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: bold;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-}
-
 .hero {
   background-image: url(../Assets/Images/hero-bio.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-width: 100%;
-  height: 100vh;
+  background-size: cover;
+  min-width: 100vw;
   display: flex;
-  justify-content: flex-start;
+  height: 40vh;
   position: relative;
 }
 
@@ -79,22 +78,56 @@ h1 {
   line-height: 2rem;
   color: #ffffff;
   position: absolute;
+  padding-top: 5.5rem;
 }
 
 .container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
-.about__title {
+.section__header {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: 700;
+  padding: 1.5rem 0 1rem 0;
 }
 
-.about__img {
+.section__img {
   max-width: 100%;
   height: auto;
+  padding-bottom: 1rem;
+}
+
+.section__subheader {
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.375rem;
+  padding-bottom: 1rem;
+}
+
+.section__body-title {
+  padding-bottom: 1rem;
+}
+
+.section__body {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  padding-bottom: 1rem;
+}
+
+section__body--paragraph {
+  padding-bottom: 1rem;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+
+.gallery__header {
+  padding: 1.5rem 0 1rem 1rem;
 }
 
 .gallery__img {
