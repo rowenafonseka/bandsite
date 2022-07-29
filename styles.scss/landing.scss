@@ -208,68 +208,95 @@ a:visited {
     flex-direction: row;
     justify-content: space-between;
   }
+}
 
-  // mobile
-  .gallery__header {
-    padding: 1.5rem 8rem 1rem 0;
-    font-size: 1.5rem;
+// mobile
+.gallery__header {
+  padding: 1.5rem 8rem 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+
+  // tablet
+  @include tablet {
+    font-size: 2.25rem;
     font-weight: 700;
-    line-height: 2rem;
-
-    // tablet
-    @include tablet {
-      font-size: 2.25rem;
-      font-weight: 700;
-      line-height: 2.75rem;
-      padding: 3rem 0 2.25rem 2.25rem;
-    }
+    line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 2.25rem;
   }
+}
 
-  .gallery__img {
-    max-width: 100%;
-    height: auto;
-    padding: 0 1rem 1rem 1rem;
+.gallery__img {
+  max-width: 100%;
+  height: auto;
+  padding: 0 1rem 1rem 1rem;
 
-    @include tablet {
-      width: 33%;
-      padding-left: 2.25rem;
-    }
+  @include tablet {
+    width: 33%;
+    padding-left: 2.25rem;
   }
+}
 
-  .footer {
-    background-color: $bandsite-black;
-    color: $white;
-    font-size: 0.8125rem;
-    font-weight: 400;
-    line-height: 1.125rem;
-  }
+.footer {
+  background-color: $bandsite-black;
+  color: $white;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
 
-  .footer__contact--heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 2rem;
-    padding-top: 1.5rem;
+// tablet
+.footer__container {
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
   }
+}
 
-  .footer__contact {
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-  }
+// mobile
+.footer__container--heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+  padding: 1.5rem 0 1rem 1rem;
 
-  .footer__icon {
-    padding-right: 1.5rem;
+  // tablet
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding-left: 2.25rem;
   }
+}
 
-  .footer__contact--name {
-    padding-bottom: 1rem;
-    padding-left: 0;
-  }
+// mobile
+.footer__social {
+  padding: 0 0 1rem 1rem;
 
-  span {
-    text-transform: uppercase;
+  // tablet
+  @include tablet {
+    padding: 2.25rem 0 0 2.25rem;
   }
+}
 
-  .footer__contact--logo {
-    padding-top: 4rem;
-  }
+.footer__icon {
+  padding-right: 1.5rem;
+}
+
+// mobile
+.footer__contact {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.footer__contact--name {
+  padding-bottom: 1rem;
+  padding-left: 0;
+}
+
+span {
+  text-transform: uppercase;
+}
+
+.footer__contact--logo {
+  padding-top: 4rem;
 }
