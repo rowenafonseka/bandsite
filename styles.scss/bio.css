@@ -1,29 +1,52 @@
-@use "./partials/global" as *;
-@use "./partials/typography" as *;
-@use "./partials/colors" as *;
-@use "./partials/breakpoints" as *;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+* {
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Avenir", sans serif;
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-style: bold;
+}
+@font-face {
+  font-family: Avenir;
+  src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  font-weight: demi;
+}
 .navigation {
-  // mobile
-  background-color: $bandsite-black;
+  background-color: #323232;
   display: flex;
   flex-direction: column;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .navigation {
     display: flex;
     flex-direction: row;
   }
 }
 
 .navigation__logo {
-  // mobile
   width: 30%;
   margin: auto;
   margin-top: 1.25rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .navigation__logo {
     margin-left: 3rem;
     padding-bottom: 2rem;
     padding-top: 0.5rem;
@@ -32,12 +55,12 @@
 }
 
 .navigation__sub {
-  // mobile
   display: flex;
   justify-content: space-between;
   padding: 1rem 4rem 0 0;
-
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .navigation__sub {
     padding: 2.5rem 5rem 0 0;
   }
 }
@@ -46,18 +69,17 @@
   text-decoration: none;
   padding-left: 3rem;
   padding-bottom: 1rem;
-  color: $mercury;
+  color: #e1e1e1;
 }
 
 .navigation__tab--active {
-  // mobile
-  color: $white;
+  color: #ffffff;
   font-weight: 700;
-  border-bottom: 3px solid $white;
+  border-bottom: 3px solid #ffffff;
   padding-right: 2rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .navigation__tab--active {
     padding-right: 0;
     padding-left: 0;
     margin-left: 3rem;
@@ -65,39 +87,36 @@
 }
 
 a:visited {
-  color: $white;
+  color: #ffffff;
 }
-
-// mobile
 
 .hero {
   background-image: url(../Assets/Images/hero-bio.jpg);
   background-size: cover;
+  background-position: center;
   min-width: 100vw;
   display: flex;
   height: 40vh;
   position: relative;
-
-  //tablet
-
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .hero {
     height: 100vh;
     min-width: 100%;
   }
 }
 
-// mobile
 .hero__title {
   padding: 1.5rem 0 1rem 1rem;
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   line-height: 2rem;
-  color: $white;
+  color: #ffffff;
   position: absolute;
   padding-top: 5.5rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .hero__title {
     padding-top: 15rem;
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -106,20 +125,19 @@ a:visited {
   }
 }
 
-.section {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-// mobile
 .section__header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding: 1.5rem 0 1rem 0.5rem;
-
-  // tablet
-  @include tablet {
+  padding: 1.5rem 0 1rem 0;
+}
+@media (min-width: 768px) {
+  .section__header {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 2.75rem;
@@ -127,42 +145,44 @@ a:visited {
   }
 }
 
-// mobile
 .section__img {
   max-width: 100%;
   height: auto;
   padding-bottom: 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .section__img {
     padding: 0 4.5rem 2.25rem 4.5rem;
   }
 }
 
-// mobile
-.section__subheader {
+.section__quote {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
   padding-bottom: 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .section__quote {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2rem;
   }
 }
 
-// mobile
-.section__body-title {
-  padding: 1.5rem 0 1rem 1rem;
+.section__quote {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.section__subheader {
+  padding: 1rem 0 1rem 0;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .section__subheader {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2rem;
@@ -170,25 +190,23 @@ a:visited {
   }
 }
 
-// mobile
 .section__body {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   padding-bottom: 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .section__body {
     display: flex;
   }
 }
 
-// mobile
 .section__body--paragraph {
   padding-bottom: 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .section__body--paragraph {
     padding-top: 1rem;
     padding-right: 3.25rem;
     font-style: 0.875rem;
@@ -198,27 +216,27 @@ a:visited {
 }
 
 .gallery {
-  background-color: $alabaster;
+  background-color: #fafafa;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .gallery {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
   }
 }
 
-// mobile
 .gallery__header {
-  padding: 1.5rem 8rem 1rem 0;
+  padding: 1.5rem 8rem 1rem 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .gallery__header {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 2.75rem;
@@ -230,50 +248,48 @@ a:visited {
   max-width: 100%;
   height: auto;
   padding: 0 1rem 1rem 1rem;
-
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .gallery__img {
     width: 33%;
     padding-left: 2.25rem;
   }
 }
 
 .footer {
-  background-color: $bandsite-black;
-  color: $white;
+  background-color: #323232;
+  color: #ffffff;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
 }
 
-// tablet
-.footer__container {
-  @include tablet {
+@media (min-width: 768px) {
+  .footer__container {
     display: flex;
     justify-content: flex-start;
   }
 }
 
-// mobile
 .footer__container--heading {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
   padding: 1.5rem 0 1rem 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .footer__container--heading {
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding-left: 2.25rem;
   }
 }
 
-// mobile
 .footer__social {
   padding: 0 0 1rem 1rem;
-
-  // tablet
-  @include tablet {
+}
+@media (min-width: 768px) {
+  .footer__social {
     padding: 2.25rem 0 0 2.25rem;
   }
 }
@@ -282,10 +298,14 @@ a:visited {
   padding-right: 1.5rem;
 }
 
-// mobile
 .footer__contact {
   padding-bottom: 1rem;
   padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__contact {
+    display: flex;
+  }
 }
 
 .footer__contact--name {
@@ -299,4 +319,4 @@ span {
 
 .footer__contact--logo {
   padding-top: 4rem;
-}
+}/*# sourceMappingURL=bio.css.map */
