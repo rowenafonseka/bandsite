@@ -79,6 +79,14 @@ a:visited {
   height: 40vh;
   position: relative;
 
+  .hero__overlay{
+    width: 100%;
+    height: 100%;
+    background: $bandsite-black;
+    opacity: 0.5;
+    position: absolute;
+  }
+
   //tablet
 
   @include tablet {
@@ -94,8 +102,10 @@ a:visited {
   font-weight: 700;
   line-height: 2rem;
   color: $white;
-  position: absolute;
   padding-top: 5.5rem;
+  
+  
+  
 
   // tablet
   @include tablet {
@@ -106,18 +116,19 @@ a:visited {
     padding-left: 3rem;
   }
 }
-.container{
+
+.section{
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
 
 // mobile
-.section__header {
+.header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1.5rem 0 0  1rem;
 
   // tablet
   @include tablet {
@@ -129,10 +140,11 @@ a:visited {
 }
 
 // mobile
-.section__img {
+.header__img {
   max-width: 100%;
   height: auto;
-  padding-bottom: 1rem;
+  padding: 1rem;
+
 
   // tablet
   @include tablet {
@@ -141,29 +153,27 @@ a:visited {
 }
 
 // mobile
-.section__quote {
+.header__quote {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
-  padding-bottom: 1rem;
+  
 
   // tablet
   @include tablet {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2rem;
+    padding-left: 4.5rem;
+    padding-right: 4rem;
   }
 }
 
-.section__quote{
-  font-size: 1rem;
-  font-weight: 700;
-}
 
 // mobile
-.section__subheader {
-  padding: 1rem 0 1rem 0;
-  font-size: 0.875rem;
+.header__subheader {
+  padding: 1rem 0 1rem 1rem;
+  font-size: .875rem;
   font-weight: 600;
   line-height: 1.375rem;
 
@@ -173,24 +183,29 @@ a:visited {
     font-weight: 600;
     line-height: 2rem;
     padding-top: 2.25rem;
+    
+     
   }
 }
 
 // mobile
-.section__body {
+.header__body {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   padding-bottom: 1rem;
+  
 
   // tablet
   @include tablet {
     display: flex;
+    
   }
 }
 
+
 // mobile
-.section__body--paragraph {
+.header__body--paragraph {
   padding-bottom: 1rem;
 
   // tablet
@@ -230,6 +245,14 @@ a:visited {
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 2.25rem;
   }
+}
+
+.gallery__container{
+    @include tablet{
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+
 }
 
 .gallery__img {
