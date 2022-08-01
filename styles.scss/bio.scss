@@ -5,7 +5,7 @@
 
 .navigation {
   // mobile
-  background-color: $bandsite-black;
+  background-color: $black;
   display: flex;
   flex-direction: column;
 
@@ -28,6 +28,7 @@
     padding-bottom: 2rem;
     padding-top: 0.5rem;
     margin-right: 0;
+    width: 20%;
   }
 }
 
@@ -47,6 +48,7 @@
   padding-left: 3rem;
   padding-bottom: 1rem;
   color: $mercury;
+  
 }
 
 .navigation__tab--active {
@@ -82,7 +84,7 @@ a:visited {
   .hero__overlay{
     width: 100%;
     height: 100%;
-    background: $bandsite-black;
+    background: $black;
     opacity: 0.5;
     position: absolute;
   }
@@ -104,9 +106,6 @@ a:visited {
   color: $white;
   padding-top: 5.5rem;
   
-  
-  
-
   // tablet
   @include tablet {
     padding-top: 15rem;
@@ -117,25 +116,20 @@ a:visited {
   }
 }
 
-.section{
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-
 // mobile
 .header {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  padding: 1.5rem 0 0  1rem;
+  padding: 1.5rem 0 0 1rem;
 
   // tablet
   @include tablet {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 2.75rem;
-    padding: 3rem 2.25rem 1rem 1rem;
+    padding: 3rem 2.25rem 1rem 3rem;
+    
   }
 }
 
@@ -143,12 +137,11 @@ a:visited {
 .header__img {
   max-width: 100%;
   height: auto;
-  padding: 1rem;
-
-
+  padding-right: 1rem;
+  
   // tablet
   @include tablet {
-    padding: 0 4.5rem 2.25rem 4.5rem;
+    padding: 0 6.5rem 0 6.5rem;
   }
 }
 
@@ -157,6 +150,8 @@ a:visited {
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
+  padding-right: 1rem;
+  
   
 
   // tablet
@@ -164,8 +159,7 @@ a:visited {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2rem;
-    padding-left: 4.5rem;
-    padding-right: 4rem;
+    padding: 1rem 6.5rem 0 6.5rem;
   }
 }
 
@@ -182,9 +176,8 @@ a:visited {
     font-size: 1.5rem;
     font-weight: 600;
     line-height: 2rem;
-    padding-top: 2.25rem;
-    
-     
+    padding-top: 2.25rem;    
+    padding-left: 6.5rem; 
   }
 }
 
@@ -193,30 +186,51 @@ a:visited {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
-  padding-bottom: 1rem;
+  padding: 0 0.5rem 1rem 0.5rem;
   
 
   // tablet
   @include tablet {
     display: flex;
-    
+    justify-content:space-around;
+    padding-left: 2.5rem;
+    padding-right: 2rem;    
   }
 }
 
 
 // mobile
-.header__body--paragraph {
+.header__body--paragraph1 {
   padding-bottom: 1rem;
 
   // tablet
   @include tablet {
     padding-top: 1rem;
-    padding-right: 3.25rem;
+    padding-right: 6.25rem;
+    padding-left: 4rem;
     font-style: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
   }
 }
+
+.header__body--paragraph2 {
+  padding-bottom: 1rem;
+
+  // tablet
+  @include tablet {
+    padding-top: 1rem;
+    padding-right: 6.25rem;
+    padding-left: 1rem;
+    font-style: 0.875rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+  }
+}
+
+
+
+
 
 .gallery {
   background-color: $alabaster;
@@ -249,8 +263,8 @@ a:visited {
 
 .gallery__container{
     @include tablet{
-      padding-right: 1rem;
-      padding-left: 1rem;
+      padding: 0 0.75rem 1rem 1rem;
+    
     }
 
 }
@@ -262,16 +276,21 @@ a:visited {
 
   @include tablet {
     width: 33%;
-    padding-left: 2.25rem;
+    
   }
 }
 
 .footer {
-  background-color: $bandsite-black;
+  background-color: $black;
   color: $white;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
+
+  @include tablet{
+    position: relative;
+  }
+
 }
 
 // tablet
@@ -279,6 +298,7 @@ a:visited {
   @include tablet {
     display: flex;
     justify-content: flex-start;
+    padding-left: 0;
   }
 }
 
@@ -315,16 +335,31 @@ a:visited {
 .footer__contact {
   padding-bottom: 1rem;
   padding-left: 1rem;
+  padding-top: 0.5rem;
 
   // tablet
   @include tablet {
     display: flex;
+    padding-left: 2.25rem;
+  
   }
 }
 
 .footer__contact--name {
   padding-bottom: 1rem;
   padding-left: 0;
+  font-size: .8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+
+
+  @include tablet{
+    display: flex;
+    flex-direction: column;
+    padding-right: 5rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+  }
 }
 
 span {
@@ -333,4 +368,15 @@ span {
 
 .footer__contact--logo {
   padding-top: 4rem;
+
+  @include tablet{
+    position: absolute;
+    top: 0;
+    right: 2.0625rem;
+    padding-top: 2rem;
+    
+    
+    
+    
+  }
 }
