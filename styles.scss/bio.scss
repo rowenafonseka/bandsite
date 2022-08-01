@@ -30,6 +30,11 @@
     margin-right: 0;
     width: 20%;
   }
+
+  @include desktop{
+    width: 15%
+  }
+
 }
 
 .navigation__sub {
@@ -99,12 +104,12 @@ a:visited {
 
 // mobile
 .hero__title {
-  padding: 1.5rem 0 1rem 1rem;
+  padding: 5.5rem 0 1rem 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
   color: $white;
-  padding-top: 5.5rem;
+  
   
   // tablet
   @include tablet {
@@ -114,6 +119,12 @@ a:visited {
     font-weight: 700;
     padding-left: 3rem;
   }
+  // desktop
+  @include desktop {
+    padding-left: 10rem;
+    
+  }
+
 }
 
 // mobile
@@ -129,7 +140,12 @@ a:visited {
     font-weight: 700;
     line-height: 2.75rem;
     padding: 3rem 2.25rem 1rem 3rem;
-    
+  }
+
+  // desktop
+  @include desktop{
+    padding-bottom: 3rem;
+    padding-left: 6rem;
   }
 }
 
@@ -142,6 +158,12 @@ a:visited {
   // tablet
   @include tablet {
     padding: 0 6.5rem 0 6.5rem;
+  }
+
+  // desktop
+  @include desktop{
+    padding-left: 12rem;
+    padding-right: 12rem;
   }
 }
 
@@ -161,6 +183,12 @@ a:visited {
     line-height: 2rem;
     padding: 1rem 6.5rem 0 6.5rem;
   }
+
+  // desktop
+  @include desktop{
+    padding-left: 12rem;
+    padding-right: 32rem;
+  }
 }
 
 
@@ -179,6 +207,11 @@ a:visited {
     padding-top: 2.25rem;    
     padding-left: 6.5rem; 
   }
+
+  // desktop
+  @include desktop{
+    padding-left: 12rem;
+  }
 }
 
 // mobile
@@ -195,6 +228,13 @@ a:visited {
     justify-content:space-around;
     padding-left: 2.5rem;
     padding-right: 2rem;    
+  }
+
+  // desktop
+  @include desktop{
+    padding-left: 8rem;
+    padding-right: 10rem;
+  
   }
 }
 
@@ -228,10 +268,6 @@ a:visited {
   }
 }
 
-
-
-
-
 .gallery {
   background-color: $alabaster;
   display: flex;
@@ -259,12 +295,22 @@ a:visited {
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 2.25rem;
   }
+
+  // tablet
+  @include desktop{
+    padding-left: 6rem;
+  }
 }
 
 .gallery__container{
     @include tablet{
       padding: 0 0.75rem 1rem 1rem;
     
+    }
+
+    @include desktop{
+      padding-left: 5rem;
+      padding-right: 5rem;
     }
 
 }
@@ -289,6 +335,7 @@ a:visited {
 
   @include tablet{
     position: relative;
+
   }
 
 }
@@ -299,6 +346,11 @@ a:visited {
     display: flex;
     justify-content: flex-start;
     padding-left: 0;
+  }
+  // desktop
+  @include desktop{
+    padding-top: 2rem;
+    padding-left: 4rem;
   }
 }
 
@@ -343,6 +395,12 @@ a:visited {
     padding-left: 2.25rem;
   
   }
+
+  // desktop
+  @include desktop{
+    padding-bottom: 2rem;
+    padding-left: 6rem;
+  }
 }
 
 .footer__contact--name {
@@ -373,10 +431,13 @@ span {
     position: absolute;
     top: 0;
     right: 2.0625rem;
-    padding-top: 2rem;
-    
-    
-    
-    
+    padding-top: 2rem;  
   }
+
+// desktop
+@include desktop{
+  padding-top: 4rem;
+  right: 7rem;
+}
+
 }
