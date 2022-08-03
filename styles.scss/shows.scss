@@ -1,0 +1,245 @@
+@use "./partials/global" as *;
+@use "./partials/typography" as *;
+@use "./partials/colors" as *;
+@use "./partials/breakpoints" as *;
+@use "./partials/mixins" as *;
+
+
+.navigation {
+    // mobile
+    background-color: $black;
+    display: flex;
+    flex-direction: column;
+  
+    // tablet
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  
+  .navigation__logo {
+    // mobile
+    width: 30%;
+    margin: auto;
+    margin-top: 1.25rem;
+    
+  
+    // tablet
+    @include tablet {
+      margin-left: 3rem;
+      padding-bottom: 2rem;
+      padding-top: 0.5rem;
+      margin-right: 0;
+      width: 20%;
+    }
+    // desktop
+    @include desktop{
+      width: 15%;
+      padding-left: 7rem;
+     margin-bottom: -1.5rem;
+    }
+  }
+  
+  .navigation__sub {
+    // mobile
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem 0 0;
+  
+    // tablet
+    @include tablet {
+      padding: 2.5rem 5rem 0 0;
+    }
+  }
+  
+  .navigation__tab {
+    text-decoration: none;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    color: $mercury;
+    
+  }
+  
+  .navigation__tab--active {
+    // mobile
+    color: $white;
+    font-weight: 700;
+    border-bottom: 3px solid $white;
+    padding-right: 2rem;
+  
+    // tablet
+    @include tablet {
+      padding-right: 0;
+      padding-left: 0;
+      margin-left: 3rem;
+    }
+  
+  }
+  
+  a:visited {
+    color: $white;
+  }
+
+  // mobile
+.shows-hero {
+    background-image: url(../Assets/Images/hero-shows.jpg);
+    background-size: cover;
+    background-position: center;
+    min-width: 100vw;
+    display: flex;
+    height: 40vh;
+    position: relative;
+  
+ .shows-hero__overlay{
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.5;
+      position: absolute;
+    }
+  
+    //tablet
+    @include tablet {
+      height: 100vh;
+      min-width: 100%;
+    }
+  }
+  
+  // mobile
+  .shows-hero__title {
+    padding: 5.5rem 0 1rem 1rem;
+    color: $white;
+    @include mobile-bold;
+    
+    
+    // tablet
+    @include tablet {
+      padding-top: 15rem;
+      padding-left: 3rem;
+      @include large-header;
+  }
+    
+    // desktop
+    @include desktop {
+      padding-left: 10rem;
+      @include large-header;
+      
+    }
+  
+  }
+
+.shows{
+  // mobile
+  height: 40vh;
+  width: 100%;
+}
+
+
+  .footer {
+    background-color: $black;
+    color: $white;
+  
+    @include tablet{
+      position: relative;
+  
+    }
+  
+  }
+  
+  // tablet
+  .footer__container {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 0;
+    }
+    // desktop
+    @include desktop{
+      padding-top: 2rem;
+      padding-left: 7rem;
+    }
+  }
+  
+  // mobile
+  .footer__container--heading {
+    @include mobile-bold;
+    padding: 1.5rem 0 1rem 1rem;
+  
+    // tablet
+    @include tablet {
+      @include large-section;
+      padding-left: 2.25rem;
+    }
+  }
+  
+  // mobile
+  .footer__social {
+    padding: 0 0 1rem 1rem;
+  
+    // tablet
+    @include tablet {
+      padding: 2.25rem 0 0 2.25rem;
+    }
+  }
+  
+  .footer__icon {
+    padding-right: 1.5rem;
+  }
+  
+  // mobile
+  .footer__contact {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  
+    // tablet
+    @include tablet {
+      display: flex;
+      padding-left: 2.25rem;
+    
+    }
+  
+    // desktop
+    @include desktop{
+      padding-bottom: 2rem;
+      padding-left: 9rem;
+    }
+  }
+  
+  .footer__contact--name {
+    padding-bottom: 1rem;
+    padding-left: 0;
+    @include mobile-body;
+  
+  // tablet
+    @include tablet{
+      display: flex;
+      flex-direction: column;
+      padding-right: 5rem;
+      @include large-footer;
+    }
+  }
+  
+  span {
+    text-transform: uppercase;
+  }
+  
+  .footer__contact--logo {
+    padding-top: 4rem;
+  
+    @include tablet{
+      position: absolute;
+      top: 0;
+      right: 2.0625rem;
+      padding-top: 2rem;  
+    }
+  
+  // desktop
+  @include desktop{
+    padding-top: 4rem;
+    right: 10rem;
+  }
+  
+  }
+  
