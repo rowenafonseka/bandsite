@@ -84,7 +84,8 @@ body {
   color: #ffffff;
   font-weight: 700;
   border-bottom: 3px solid #ffffff;
-  padding-right: 2rem;
+  padding-left: 0;
+  padding-right: 3rem;
 }
 @media (min-width: 768px) {
   .navigation__tab--active {
@@ -98,7 +99,7 @@ a:visited {
   color: #ffffff;
 }
 
-.shows-hero {
+.hero-shows {
   background-image: url(../Assets/Images/hero-shows.jpg);
   background-size: cover;
   background-position: center;
@@ -107,7 +108,7 @@ a:visited {
   height: 40vh;
   position: relative;
 }
-.shows-hero .shows-hero__overlay {
+.hero-shows .hero-shows__overlay {
   width: 100%;
   height: 100%;
   background: #323232;
@@ -115,13 +116,13 @@ a:visited {
   position: absolute;
 }
 @media (min-width: 768px) {
-  .shows-hero {
+  .hero-shows {
     height: 100vh;
     min-width: 100%;
   }
 }
 
-.shows-hero__title {
+.hero-shows__title {
   padding: 5.5rem 0 1rem 1rem;
   color: #ffffff;
   font-size: 1.5rem;
@@ -129,7 +130,7 @@ a:visited {
   line-height: 2rem;
 }
 @media (min-width: 768px) {
-  .shows-hero__title {
+  .hero-shows__title {
     padding-top: 15rem;
     padding-left: 3rem;
     font-size: 3.75rem;
@@ -138,7 +139,7 @@ a:visited {
   }
 }
 @media (min-width: 1280px) {
-  .shows-hero__title {
+  .hero-shows__title {
     padding-left: 10rem;
     font-size: 3.75rem;
     line-height: 4.25rem;
