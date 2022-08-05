@@ -313,40 +313,59 @@ a:visited {
   }
 }
 
-.form-field__header{
+.conversation__header{
   font-size: 1.5rem;
   font-weight: 700;
   color: $black;
   line-height: 2rem;
   padding: 1.5rem 0 1rem 1rem;
+
+  @include tablet{
+    @include large-section;
+    padding: 3rem 0 1rem 2.25rem;
+    
+  }
 }
 
 
 // mobile
-.form-field__text{
+.conversation__text{
  display: flex;
  justify-content: center;
 
-
+ @include tablet{
+  justify-content: flex-start;
+  margin-left: 5rem;
+  
+ }
 
 
 }
 
 // mobile
-.form-field__text--avatar{
+.conversation__text--avatar{
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
   margin-left: 1rem;
+  margin-top: 1.375rem;
  
 }
 
-.form-field__container{
+
+
+.conversation__container{
  margin-left: 1rem;
   padding-right: 1rem;
+
+  @include tablet{
+    position: relative;
+    
+  }
+
 }
 
-.form-field__text--label{
+.conversation__text--label{
   text-transform: uppercase;
   color: #AFAFAF;
   padding-bottom: .25rem;
@@ -357,11 +376,11 @@ a:visited {
   
 }
 
-.form-field__text--name{
+.conversation__text--name{
   width: 100%;
+  min-width: 10rem;
   height: 2.25rem;
   border-radius: .25rem;
-  padding-right: 10rem;
   padding-left: .75rem;
   margin-bottom: 1.5rem;
   border: 1px solid $mercury;
@@ -369,29 +388,48 @@ a:visited {
   
 }
 
-.form-field__text--comment{
+.conversation__text--comment{
   width: 100%;
   height: 6rem;
   border-radius: .25rem;
   padding: .75rem;
   margin-bottom: 2rem;
   border: 1px solid $mercury;
-  vertical-align: text-top;
   
 }
 
-.form-field__button{
+::placeholder{
+  color: $black;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: avenir;
+
+}
+
+.conversation__button{
   height: 2.5rem;
   width: 100%;
   background-color: $black;
   color: $white;
   text-transform: uppercase;
   border-radius: 4px;
-  font-size: .625rem;
+  font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  border: 0;
+
+  @include tablet{
+    width: 9.375rem;
+    position: absolute;
+    top: 220px;
+    right: 15px;
+
+  
+  }
+
 }
+
 
 .comments__box{
   display: flex;
