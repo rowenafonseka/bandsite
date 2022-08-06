@@ -84,9 +84,8 @@ a:visited {
 .hero{
   display: flex;
   height:40vh;
-  min-width: 100vw;
+  min-width: 100%;
   position: relative;
-  background-image: url(../Assets/Images/hero-bio.jpg);
   background-size: cover;
 
 
@@ -97,24 +96,28 @@ a:visited {
     }
   }
 
-
-.hero::before {    
-    content: "";
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.5;
-    background-color: $black;
+.hero::before{
+  content: "";
+  position: absolute;
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-size: cover;
+  background-color: $black;
+  opacity: 0.5;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
 }
+
 
 // mobile
 .hero__title {
+  position: relative;
   padding: 5.5rem 0 1rem 1rem;
   color: $white;
-  position: relative;
+  
   @include mobile-bold;
+
   
   
   // tablet

@@ -10,21 +10,21 @@
 
 html,
 body {
-  font-family: "Avenir", sans-serif;
+  font-family: "AvenirNext", sans-serif;
   max-width: 100%;
 }
 
 @font-face {
-  font-family: "Avenir";
+  font-family: "AvenirNext";
   src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Regular.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
 }
 @font-face {
-  font-family: "Avenir";
+  font-family: "AvenirNext";
   src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-style: bold;
 }
 @font-face {
-  font-family: Avenir;
+  font-family: "AvenirNext";
   src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff2") format("woff2"), url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff") format("woff"), url("/Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: demi;
 }
@@ -101,9 +101,8 @@ a:visited {
 .hero {
   display: flex;
   height: 40vh;
-  min-width: 100vw;
+  min-width: 100%;
   position: relative;
-  background-image: url(../Assets/Images/hero-bio.jpg);
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -116,18 +115,20 @@ a:visited {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.5;
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-size: cover;
   background-color: #323232;
+  opacity: 0.5;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
 }
 
 .hero__title {
+  position: relative;
   padding: 5.5rem 0 1rem 1rem;
   color: #ffffff;
-  position: relative;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
