@@ -20,32 +20,77 @@ const defaultComments = [
 ];
 
 
-function displayComment(arr){
-const wrapper = document.getElementById('comments');
+// target comment div and set to variable
+let wrap = document.getElementById('comments');
+
+// function to display comments and add new comments
+function displayComment(object){
+
+// Add event listener to conversation form 
+  let formEl = document.querySelector('#form');
+
+  formEl.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+// Define new comment parameter for user 
+    let yourComment = {};
+    yourComment.name = event.target.nameField.value;
+    yourComment.text = event.target.commentField.value;
+// Set current date when comment is loaded
+    let currentDate = new Date();
+    yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
+
+// displays new comment at top of list
+    defaultComments.unshift(yourComment);
+    displayComment(defaultComments);
+
+// resets form
+    formEl.reset();
+
+  });
 
 
-  for (let i = 0; i < arr.length; i++){
+  for (let i = 0; i < object.length; i++){
     
     let nextComment = document.createElement('div');
     nextComment.classList.add('comments__box');
-    wrapper.appendChild(nextComment);
+    wrap.appendChild(nextComment);
 
     let avatar = document.createElement('div');
-    avatar = classList.add('comments__box--avatar');
+    avatar.classList.add('comments__box--avatar');
     nextComment.appendChild(avatar);
 
     let paragraph = document.createElement('div');
-    paragraph = classList.add('comments__box--paragraph');
+    paragraph.classList.add('comments__box--paragraph');
     nextComment.appendChild(paragraph);
 
     let commentName = document.createElement('span');
-    commentName = classList.add('comments__box--name');
-    commentName.innerText = defaultComments[i].name;
+    commentName.classList.add('comments__box--name');
+    commentName.innerText = object[i]['name'];
     paragraph.appendChild(commentName);
 
-    
+    let quote = document.createElement('p');
+    quote.classList.add('comments__box--text');
+    quote.innerText = object[i]['text'];
+    paragraph.appendChild(quote);
+
+    let time = document.createElement('div');
+    nextComment.appendChild(time);
+
+    let commentDate = document.createElement('span');
+    commentDate.classList.add('comments__box--date');
+    commentDate.innerText = object[i]['date'];
+    time.appendChild(commentDate);
+    };
+
+   return nextComment 
   }
-}
+
+displayComment(defaultComments);
+
+
+
+
 
 
 /* <div class="comments comments__box">

@@ -326,6 +326,10 @@ a:visited {
     padding: 3rem 0 1rem 2.25rem;
     
   }
+
+   @include desktop{
+    padding-left: 9rem;
+   }
 }
 
 
@@ -337,10 +341,21 @@ a:visited {
  @include tablet{
   justify-content: flex-start;
   margin-left: 5rem;
-  
  }
 
+ @include desktop{
+   margin-left: 24rem;
 
+ }
+
+}
+
+
+#form{
+
+  @include tablet{
+    margin-bottom: 5rem;
+  }
 }
 
 // mobile
@@ -353,12 +368,14 @@ a:visited {
  
 }
 
+
 .conversation__container{
  margin-left: 1rem;
   padding-right: 1rem;
 
   @include tablet{
     position: relative;
+    
     
   }
 
@@ -372,6 +389,11 @@ a:visited {
   font-size: .625rem;
   font-weight: 700;
   line-height: 1.25rem;
+
+  @include tablet{
+    font-size: .75rem;
+  
+  }
   
 }
 
@@ -384,17 +406,29 @@ a:visited {
   margin-bottom: 1.5rem;
   border: 1px solid $mercury;
   text-align: left;
+
+    @include tablet{
+      min-width: 18rem;
+      
+    }
   
+    @include desktop{
+      min-width: 12rem;
+    }
 }
+
+input:invalid {
+  border: 1px solid red;
+}
+
 
 .conversation__text--comment{
   width: 100%;
-  height: 6rem;
+  height: 7rem;
   border-radius: .25rem;
   padding: .75rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   border: 1px solid $mercury;
-  
 }
 
 ::placeholder{
@@ -423,6 +457,7 @@ a:visited {
     position: absolute;
     top: 220px;
     right: 15px;
+    margin-top: 1.5rem;
 
   
   }
@@ -434,7 +469,22 @@ a:visited {
   display: flex;
   justify-content: center;
   border-top: 1px solid $mercury;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  height: 17rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+    @include tablet{
+      margin-left: 6rem;
+      margin-right: 7rem;
+      height: 10rem;
+    }
+
+    @include desktop{
+      margin-left: 25rem;
+      margin-right: 29rem;
+
+    }
 }
 
 .comments__box--avatar{
@@ -442,8 +492,12 @@ a:visited {
   height:2.25rem;
   border-radius: 50%;
   background-color: $mercury;
-  margin-left: 1rem;
+  margin-left: .5rem;
   padding-right: 2.25rem;
+
+  @include tablet{
+    margin-left: 0;
+  }
 }
 
 .comments__box--paragraph{
@@ -452,6 +506,7 @@ a:visited {
   font-weight: 400;
   padding-bottom: 1rem;
   padding-left: 1.75rem;
+
 
   
 }
@@ -463,6 +518,10 @@ a:visited {
 
 .comments__box--text{
   padding-top: 1rem;
+  font-size: 13px;
+  line-height: 1.125rem;
+  
+
 }
 
 
@@ -471,7 +530,12 @@ a:visited {
   line-height: 1.125rem;
   font-weight: 400;
   color: $mercury;
-  padding-right: 1.5rem;
+  padding-right: 0;
+
+
+  @include tablet{
+    padding-right: 0;
+  }
 }
 
 
