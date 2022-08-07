@@ -224,6 +224,10 @@
 
 }
 
+.shows__container--active{
+  background-color: $mercury;
+}
+
 .shows__container:hover{
   background-color: $alabaster;
 }

@@ -240,6 +240,10 @@ a:visited {
   }
 }
 
+.shows__container--active {
+  background-color: #e1e1e1;
+}
+
 .shows__container:hover {
   background-color: #fafafa;
 }

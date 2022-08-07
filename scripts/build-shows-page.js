@@ -145,13 +145,19 @@ for (let i = 0; i < showsList.length; i++){
 
 }
 
-// let colorContainer = document.getElementsByClassName('shows__container');
-// let color = colorContainer.getElementsByClassName('shows__info');
 
-// for (let i=0; i < color.length; i++){
-//     color[i].addEventListener('click' function() {
+    let clickRow = document.querySelector('.shows__container');
 
-//     })
-// }
+ clickRow.onclick = (event) => {
+        let clickedShow = event.currentTarget;
+        clickedShow.classList.add('shows__container--active');
+ 
 
-
+    for (let i = 0; i < clickRow.length; i++) {
+        if (clickedShow !== clickRow) {
+            clickRow.classList.remove('shows__container--active');
+        } else {
+            clickRow.classList.add('shows__container--active');
+        }
+    }
+};
