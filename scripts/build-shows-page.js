@@ -140,115 +140,18 @@ for (let i = 0; i < showsList.length; i++){
     button.innerText = 'buy tickets';
     nextShow.appendChild(button);
 
-    return newRow
         
     }
 
 }
 
+// let colorContainer = document.getElementsByClassName('shows__container');
+// let color = colorContainer.getElementsByClassName('shows__info');
+
+// for (let i=0; i < color.length; i++){
+//     color[i].addEventListener('click' function() {
+
+//     })
+// }
 
 
-
-
-
-
-//         <!-- Shows Container 2 -->
-//         <div class="shows shows__container">
-//           <!-- Shows Date -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">date</p>
-//             <p class="shows shows__info shows__info--date">Tues Sept 21 2021</p>
-//           </div>
-//           <!-- Shows Venue -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">venue</p>
-//             <p>Pier 3 East</p>
-//           </div>
-//           <!-- Shows Location -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">location</p>
-//             <p>San Francisco, CA</p>
-//           </div>
-//           <!-- Shows Button -->
-//           <a class="shows shows__button" href="#">buy tickets</a>
-//         </div>
-//         <!-- Shows Container 3 -->
-//         <div class="shows shows__container">
-//           <!-- Shows Date -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">date</p>
-//             <p class="shows shows__info shows__info--date">Fri Oct 15 2021</p>
-//           </div>
-//           <!-- Shows Venue -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">venue</p>
-//             <p>View Lounge</p>
-//           </div>
-//           <!-- Shows Location -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">location</p>
-//             <p>San Francisco, CA</p>
-//           </div>
-//           <!-- Shows Button -->
-//           <a class="shows shows__button" href="#">buy tickets</a>
-//         </div>
-//         <!-- Shows Container 4 -->
-//         <div class="shows shows__container">
-//           <!-- Shows Date -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">date</p>
-//             <p class="shows shows__info shows__info--date">Sat Nov 06 2021</p>
-//           </div>
-//           <!-- Shows Venue -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">venue</p>
-//             <p>Hyatt Agency</p>
-//           </div>
-//           <!-- Shows Location -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">location</p>
-//             <p>San Francisco, CA</p>
-//           </div>
-//           <!-- Shows Button -->
-//           <a class="shows shows__button" href="#">buy tickets</a>
-//         </div>
-//         <!-- Shows Container 5 -->
-//         <div class="shows shows__container">
-//           <!-- Shows Date -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">date</p>
-//             <p class="shows shows__info shows__info--date">Fri Nov 26 2021</p>
-//           </div>
-//           <!-- Shows Venue -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">venue</p>
-//             <p>Moscow Center</p>
-//           </div>
-//           <!-- Shows Location -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">location</p>
-//             <p>San Francisco, CA</p>
-//           </div>
-//           <!-- Shows Button -->
-//           <a class="shows shows__button" href="#">buy tickets</a>
-//         </div>
-//         <!-- Shows Container 6 -->
-//         <div class="shows shows__container">
-//           <!-- Shows Date -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">date</p>
-//             <p class="shows shows__info shows__info--date">Wed Dec 15 2021</p>
-//           </div>
-//           <!-- Shows Venue -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">venue</p>
-//             <p>Press Club</p>
-//           </div>
-//           <!-- Shows Location -->
-//           <div class="shows shows__info">
-//             <p class="shows shows__info shows__info--label">location</p>
-//             <p>San Francisco, CA</p>
-//           </div>
-//           <!-- Shows Buton -->
-//           <a class="shows shows__button" href="#">buy tickets</a>
-//         </div>
