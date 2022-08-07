@@ -100,57 +100,104 @@ a:visited {
 }
 
 .hero {
-  display: flex;
-  height: 60vh;
-  min-width: 100%;
-  position: relative;
-  background-image: url(../Assets/Images/hero-shows.jpg);
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.323), rgba(0, 0, 0, 0.321)), url(../Assets/Images/hero-shows.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 }
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .hero {
-    height: 100vh;
-    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
 }
 
-.hero__title {
-  padding: 5.5rem 0 1rem 1rem;
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 2rem;
+.hero__text {
+  padding-left: 0.5rem;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
-  .hero__title {
-    padding-top: 15rem;
-    padding-left: 3rem;
+  .hero__text {
+    padding-left: 1.5rem;
+    padding-top: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.hero__text--album {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .hero__text--album {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+  }
+}
+
+.hero__text--title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding-right: 6rem;
+  padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .hero__text--title {
+    padding-right: 20rem;
+    padding-bottom: 2.5rem;
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
   }
 }
 @media (min-width: 1280px) {
-  .hero__title {
-    padding-left: 10rem;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    font-weight: 700;
+  .hero__text--title {
+    padding-right: 5rem;
+    padding-top: 0;
+    padding-bottom: 8rem;
   }
 }
 
-.hero__soundCloud {
-  height: 6rem;
-  position: absolute;
-  top: 55%;
-  z-index: 1;
-  padding-right: 1rem;
-  padding-left: 1rem;
+.hero__song {
+  height: 140px;
+  padding: 0 1rem 1.5rem 1rem;
   border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .hero__song {
+    width: 50%;
+    height: 170px;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__song {
+    width: 70%;
+    margin-top: 13rem;
+  }
 }
 
 #wrapper {
   padding-left: 1rem;
+}
+@media (min-width: 1280px) {
+  #wrapper {
+    padding-left: 7.5rem;
+    padding-right: 7rem;
+  }
 }
 
 .shows__title {

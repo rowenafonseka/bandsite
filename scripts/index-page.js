@@ -2,57 +2,53 @@ const defaultComments = [
         {
             name: "Connor Walton",
             date: "02/17/21",
-            text: "This is art. This is inexplicable magic expressed in the purest
-            way, everything that makes up this majestic work deserves
-            reverence. Let us appreciate this for what it is and what it
-            contains." , 
-        },
+            text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
 
+        },
         {
             name: "Emilie Beach",
             date: "01/09/2021",
-            text: "I feel blessed to have seen them in person. What a show! They were 
-            just perfection. If there was one day of my life I could relive,
-            this would be it. What an incredible day." , 
+            text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."  
 
         },
-
         {
             name: "Miles Acosta",
             date: "12/20/2020",
-            text: " I can't stop listening. Every time I hear one of their songs - the
-            vocals - it gives me goosebumps. Shivers straight down my spine.
-            What a beautiful expression of creativity. Can't get enough." , 
+            text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+            
         }
-
 ];
 
 
-// 1. Make container for default comment section (DOM)
-
-// Create new elements. 
-// Create elements with classes. 
-// Add content without using innerHTML. Use methods for individual elements.
+function displayComment(arr){
+const wrapper = document.getElementById('comments');
 
 
-let newElement = document.createElement('input');
-document.body.appendChild(newElement);
+  for (let i = 0; i < arr.length; i++){
+    
+    let nextComment = document.createElement('div');
+    nextComment.classList.add('comments__box');
+    wrapper.appendChild(nextComment);
+
+    let avatar = document.createElement('div');
+    avatar = classList.add('comments__box--avatar');
+    nextComment.appendChild(avatar);
+
+    let paragraph = document.createElement('div');
+    paragraph = classList.add('comments__box--paragraph');
+    nextComment.appendChild(paragraph);
+
+    let commentName = document.createElement('span');
+    commentName = classList.add('comments__box--name');
+    commentName.innerText = defaultComments[i].name;
+    paragraph.appendChild(commentName);
+
+    
+  }
+}
 
 
-// 2. Make click event for submit. What do you need to do for that
- /* a. user clicks in text field
-    b. user enters name field
-    c. user clicks in comment field
-    d. user clicks submit addEventListner (click)
-    e. comment gets published to top of comments (.push())
-    f. comment disappers on reload */
-
-
-// 3. Create each card in the div 
-
-// 4. connect the two
-
-{/* <div class="comments comments__box">
+/* <div class="comments comments__box">
 <div class="comments comments__box--avatar"></div>
 <div class="comments comments__box--paragraph">
   <span class="comments comments__box--name">Connor Walton</span>

@@ -84,75 +84,105 @@
 
   // mobile
 .hero{
-  display: flex;
-  height:60vh;
-  min-width: 100%;
-  position: relative;
-  background-image: url(../Assets/Images/hero-shows.jpg);
+  
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.323), rgba(0, 0, 0, 0.321) ), url(../Assets/Images/hero-shows.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
 
-
-        //tablet
-    @include tablet {
-      height: 100vh;
-      min-width: 100%;
-    }
+  @include desktop{
+    display: flex;
+    justify-content: space-around;
   }
 
-// .hero::before{
-//   content: "";
-//   position: absolute;
-//   background-image: url(../Assets/Images/hero-shows.jpg);
-//   background-size: cover;
-//   background-color: $black;
-//   opacity: 0.5;
-//   top: 0px;
-//   bottom: 0px;
-//   right: 0px;
-//   left: 0px;
-// }
+  
+  }
 
+.hero__text{
+  padding-left: 0.5rem;
+  padding-top: 1rem;
 
-// mobile
-.hero__title {
-  // position: relative;
-  padding: 5.5rem 0 1rem 1rem;
-  color: $white;
-  
-  @include mobile-bold;
+  @include tablet{
+    padding-left: 1.5rem;
+    padding-top: 2rem;
+  }
 
-  
-  
-  // tablet
-  @include tablet {
-    padding-top: 15rem;
-    padding-left: 3rem;
-    @include large-header;
-}
-  
-  // desktop
-  @include desktop {
-    padding-left: 10rem;
-    @include large-header;
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
     
   }
-
 }
 
+.hero__text--album{
+  color: $white;
+  font-size: 1.25rem;
+  font-weight: 400;
+  
 
-.hero__soundCloud{
-  height: 6rem;
-  position:absolute;
-  top:55%;
-  z-index: 1;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  @include tablet{
+    @include large-subheader
+
+  }
+}
+
+.hero__text--title{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: $white;
+  padding-right: 6rem;
+  padding-bottom: 2rem;
+  
+
+  @include tablet{
+   padding-right: 20rem;
+   padding-bottom: 2.5rem;
+
+    @include large-header
+  }
+  
+  @include desktop {
+    padding-right: 5rem;
+    padding-top: 0;
+    padding-bottom: 8rem;
+  }
+  
+}
+
+.hero__song{
+  height: 140px;
+  padding: 0 1rem 1.5rem 1rem;
   border-radius: 4px;
+
+  @include tablet{
+    width: 50%;
+    height: 170px;
+    padding-left: 3rem;
+    padding-bottom: 3rem;
+
+  }
+
+  @include desktop{
+    width: 70%;
+    margin-top: 13rem;
+  }
+
 }
 
+
+
+// Shows Section 
 #wrapper{
   padding-left: 1rem;
   
+  @include desktop{
+    padding-left: 7.5rem;
+    padding-right: 7rem
+  }
 }
 
 .shows__title{
