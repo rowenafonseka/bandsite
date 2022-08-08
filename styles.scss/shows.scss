@@ -18,13 +18,12 @@
     }
   }
   
-  .navigation__logo {
+  &__logo {
     // mobile
     width: 30%;
     margin: auto;
     margin-top: 1.25rem;
     
-  
     // tablet
     @include tablet {
       margin-left: 3rem;
@@ -41,7 +40,7 @@
     }
   }
   
-  .navigation__sub {
+  &__sub {
     // mobile
     display: flex;
     justify-content: space-between;
@@ -53,7 +52,7 @@
     }
   }
   
-  .navigation__tab {
+  &__tab {
     text-decoration: none;
     padding-left: 2.75rem;
     padding-bottom: 1rem;
@@ -61,7 +60,7 @@
     
   }
   
-  .navigation__tab--active {
+  &__tab--active {
     // mobile
     color: $white;
     font-weight: 700;
@@ -75,7 +74,6 @@
       padding-left: 0;
       margin-left: 3rem;
     }
-  
   }
   
   a:visited {
@@ -84,21 +82,19 @@
 
   // mobile
 .hero{
-  
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.323), rgba(0, 0, 0, 0.321) ), url(../Assets/Images/hero-shows.jpg);
+  background: linear-gradient(rgba($black, 0.5), rgba($black, 0.5) ), url(../Assets/Images/hero-shows.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+
 
   @include desktop{
     display: flex;
     justify-content: space-around;
   }
-
-  
   }
 
-.hero__text{
+&__text{
   padding-left: 0.5rem;
   padding-top: 1rem;
 
@@ -117,19 +113,18 @@
   }
 }
 
-.hero__text--album{
+&__text--album{
   color: $white;
   font-size: 1.25rem;
   font-weight: 400;
   
-
   @include tablet{
     @include large-subheader
 
   }
 }
 
-.hero__text--title{
+&__text--title{
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -137,7 +132,6 @@
   padding-right: 6rem;
   padding-bottom: 2rem;
   
-
   @include tablet{
    padding-right: 20rem;
    padding-bottom: 2.5rem;
@@ -150,10 +144,9 @@
     padding-top: 0;
     padding-bottom: 8rem;
   }
-  
 }
 
-.hero__song{
+&__song{
   height: 140px;
   padding: 0 1rem 1.5rem 1rem;
   border-radius: 4px;
@@ -163,16 +156,13 @@
     height: 170px;
     padding-left: 3rem;
     padding-bottom: 3rem;
-
   }
 
   @include desktop{
     width: 70%;
     margin-top: 13rem;
   }
-
 }
-
 
 
 // Shows Section 
@@ -185,19 +175,17 @@
   }
 }
 
-.shows__title{
+&__title{
   @include mobile-bold;
   padding: 1.5rem 0 1rem 0;
 
   @include tablet{
     margin-left: 2rem;
     @include large-section;
-
   }
- 
 }
 
-.shows__container{
+&__container{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -219,26 +207,24 @@
     padding-left: 2rem;
     padding-right: 1.75rem;
     font-size: 1rem;
-    
   } 
-
 }
 
-.shows__container--active{
+&__container--active{
   background-color: $mercury;
 }
 
-.shows__container:hover{
+&__container:hover{
   background-color: $alabaster;
 }
 
-.shows__info{
+&__info{
   padding-left: 0;
   padding-bottom: .75rem;
 
 }
 
-.shows__labels{
+&__labels{
   display: none;
 
   @include tablet{
@@ -250,7 +236,7 @@
   }
 }
 
-.shows__info--label{
+&__info--label{
   text-transform: uppercase;
   color: $mercury;
   font-size: 0.625rem;
@@ -261,12 +247,10 @@
   @include tablet{
     font-size: .75rem;
     line-height: 20px;
-    
   }
-  
 }
 
-.shows__info--labelHide{
+&__info--labelHide{
   text-transform: uppercase;
   color: $mercury;
   font-size: 0.625rem;
@@ -277,10 +261,9 @@
   @include tablet{
     display: none;
   }
- 
 }
 
-.shows__info--date{
+&__info--date{
   font-weight: 700;
   font-size: .8125rem;
   line-height: 1.125rem;
@@ -289,10 +272,9 @@
   @include tablet{
     font-size: 1rem;
   }
-  
 }
 
-.shows__button{
+&__button{
   
   text-decoration: none;
   text-transform: uppercase;
@@ -308,9 +290,7 @@
     padding-right: 4rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-
   }
-  
 }
 
   .footer {
@@ -319,13 +299,12 @@
   
     @include tablet{
       position: relative;
-  
     }
   
   }
   
   // tablet
-  .footer__container {
+  &__container {
     @include tablet {
       display: flex;
       justify-content: flex-start;
@@ -339,7 +318,7 @@
   }
   
   // mobile
-  .footer__container--heading {
+  &__container--heading {
     @include mobile-bold;
     padding: 1.5rem 0 1rem 1rem;
   
@@ -351,7 +330,7 @@
   }
   
   // mobile
-  .footer__social {
+  &__social {
     padding: 0 0 1rem 1rem;
   
     // tablet
@@ -360,12 +339,12 @@
     }
   }
   
-  .footer__icon {
+  &__icon {
     padding-right: 1.5rem;
   }
   
   // mobile
-  .footer__contact {
+  &__contact {
     padding-bottom: 1rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
@@ -374,7 +353,6 @@
     @include tablet {
       display: flex;
       padding-left: 2.25rem;
-    
     }
   
     // desktop
@@ -384,7 +362,7 @@
     }
   }
   
-  .footer__contact--name {
+  &__contact--name {
     padding-bottom: 1rem;
     padding-left: 0;
     @include mobile-body;
@@ -402,7 +380,7 @@
     text-transform: uppercase;
   }
   
-  .footer__contact--logo {
+  &__contact--logo {
     padding-top: 4rem;
   
     @include tablet{
@@ -417,6 +395,5 @@
     padding-top: 4rem;
     right: 10rem;
   }
-  
   }
   

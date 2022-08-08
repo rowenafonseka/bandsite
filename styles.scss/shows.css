@@ -101,7 +101,7 @@ a:visited {
 
 .hero {
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.323), rgba(0, 0, 0, 0.321)), url(../Assets/Images/hero-shows.jpg);
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../Assets/Images/hero-shows.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

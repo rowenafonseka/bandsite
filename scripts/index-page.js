@@ -26,29 +26,6 @@ let wrap = document.getElementById('comments');
 // function to display comments and add new comments
 function displayComment(object){
 
-// Add event listener to conversation form 
-  let formEl = document.querySelector('#form');
-
-  formEl.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-// Define new comment parameter for user 
-    let yourComment = {};
-    yourComment.name = event.target.nameField.value;
-    yourComment.text = event.target.commentField.value;
-// Set current date when comment is loaded
-    let currentDate = new Date();
-    yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
-
-// displays new comment at top of list
-    defaultComments.unshift(yourComment);
-    displayComment(defaultComments);
-
-// resets form
-    formEl.reset();
-
-  });
-
 
   for (let i = 0; i < object.length; i++){
     
@@ -83,10 +60,32 @@ function displayComment(object){
     time.appendChild(commentDate);
     };
 
-   return nextComment 
   }
 
 displayComment(defaultComments);
+
+// Add event listener to conversation form 
+let formEl = document.querySelector('#form');
+
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+// Define new comment parameter for user 
+  let yourComment = {};
+  yourComment.name = event.target.nameField.value;
+  yourComment.text = event.target.commentField.value;
+// Set current date when comment is loaded
+  let currentDate = new Date();
+  yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
+
+// displays new comment at top of list
+  defaultComments.unshift(yourComment);
+  displayComment(defaultComments);
+
+// resets form
+  formEl.reset();
+
+});
 
 
 

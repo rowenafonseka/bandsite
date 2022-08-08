@@ -432,12 +432,12 @@ a:visited {
 }
 @media (min-width: 768px) {
   .conversation__text--name {
-    min-width: 18rem;
+    min-width: 31rem;
   }
 }
 @media (min-width: 1280px) {
   .conversation__text--name {
-    min-width: 12rem;
+    min-width: 28rem;
   }
 }
 
@@ -496,6 +496,10 @@ input:invalid {
     right: 15px;
     margin-top: 1.5rem;
   }
+}
+
+.input-field input[type=text]:invalid {
+  border: red;
 }
 
 .comments__box {
