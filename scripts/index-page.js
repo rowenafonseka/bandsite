@@ -1,3 +1,4 @@
+
 const defaultComments = [
         {
             name: "Connor Walton",
@@ -72,6 +73,8 @@ formEl.addEventListener('submit', function(event) {
 
 // Define new comment parameter for user 
   let yourComment = {};
+  
+  
   yourComment.name = event.target.nameField.value;
   yourComment.text = event.target.commentField.value;
 // Set current date when comment is loaded

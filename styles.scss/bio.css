@@ -104,6 +104,7 @@ a:visited {
   min-width: 100%;
   position: relative;
   background-size: cover;
+  background-image: url(../Assets/Images/hero-bio.jpg);
 }
 @media (min-width: 768px) {
   .hero {
@@ -111,24 +112,21 @@ a:visited {
     min-width: 100%;
   }
 }
-
-.hero::before {
-  content: "";
+.hero__opacity {
   position: absolute;
-  background-image: url(../Assets/Images/hero-bio.jpg);
-  background-size: cover;
   background-color: #323232;
+  height: 100%;
+  width: 100%;
   opacity: 0.5;
   top: 0px;
   bottom: 0px;
   right: 0px;
   left: 0px;
 }
-
 .hero__title {
-  position: relative;
   padding: 5.5rem 0 1rem 1rem;
   color: #ffffff;
+  z-index: 1;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 2rem;
@@ -174,7 +172,6 @@ a:visited {
     padding-left: 9rem;
   }
 }
-
 .header__img {
   max-width: 100%;
   height: auto;
@@ -191,7 +188,6 @@ a:visited {
     padding-right: 12rem;
   }
 }
-
 .header__quote {
   font-size: 0.875rem;
   font-weight: 600;
@@ -212,7 +208,6 @@ a:visited {
     padding-right: 32rem;
   }
 }
-
 .header__subheader {
   padding: 1rem 0 1rem 1rem;
   font-size: 0.875rem;
@@ -236,7 +231,6 @@ a:visited {
     padding-left: 12rem;
   }
 }
-
 .header__body {
   font-size: 0.8125rem;
   font-weight: 400;
@@ -257,7 +251,6 @@ a:visited {
     padding-right: 10rem;
   }
 }
-
 .header__body--paragraph1 {
   padding-bottom: 1rem;
   color: #323232;
@@ -272,7 +265,6 @@ a:visited {
     line-height: 1.375rem;
   }
 }
-
 .header__body--paragraph2 {
   padding-bottom: 1rem;
 }
@@ -300,7 +292,6 @@ a:visited {
     justify-content: space-between;
   }
 }
-
 .gallery__header {
   padding: 1.5rem 8rem 1rem 1rem;
   font-size: 1.5rem;
@@ -320,7 +311,6 @@ a:visited {
     padding-left: 9rem;
   }
 }
-
 @media (min-width: 768px) {
   .gallery__container {
     padding: 0 0.75rem 1rem 1rem;
@@ -332,7 +322,6 @@ a:visited {
     padding-right: 8rem;
   }
 }
-
 .gallery__img {
   max-width: 100%;
   height: auto;
@@ -343,8 +332,7 @@ a:visited {
     width: 33%;
   }
 }
-
-.conversation__header {
+.gallery__header {
   font-size: 1.5rem;
   font-weight: 700;
   color: #323232;
@@ -352,7 +340,7 @@ a:visited {
   padding: 1.5rem 0 1rem 1rem;
 }
 @media (min-width: 768px) {
-  .conversation__header {
+  .gallery__header {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 2.75rem;
@@ -360,23 +348,22 @@ a:visited {
   }
 }
 @media (min-width: 1280px) {
-  .conversation__header {
+  .gallery__header {
     padding-left: 9rem;
   }
 }
-
-.conversation__text {
+.gallery__text {
   display: flex;
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .conversation__text {
+  .gallery__text {
     justify-content: flex-start;
     margin-left: 5rem;
   }
 }
 @media (min-width: 1280px) {
-  .conversation__text {
+  .gallery__text {
     margin-left: 24rem;
   }
 }
@@ -580,7 +567,6 @@ input:invalid {
     position: relative;
   }
 }
-
 @media (min-width: 768px) {
   .footer__container {
     display: flex;
@@ -594,7 +580,6 @@ input:invalid {
     padding-left: 7rem;
   }
 }
-
 .footer__container--heading {
   font-size: 1.5rem;
   font-weight: 700;
@@ -609,7 +594,6 @@ input:invalid {
     padding-left: 2.25rem;
   }
 }
-
 .footer__social {
   padding: 0 0 1rem 1rem;
 }
@@ -618,11 +602,9 @@ input:invalid {
     padding: 2.25rem 0 0 2.25rem;
   }
 }
-
 .footer__icon {
   padding-right: 1.5rem;
 }
-
 .footer__contact {
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -640,7 +622,6 @@ input:invalid {
     padding-left: 9rem;
   }
 }
-
 .footer__contact--name {
   padding-bottom: 1rem;
   padding-left: 0;
@@ -649,7 +630,7 @@ input:invalid {
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
-  .footer__contact--name {
+  .footer {
     display: flex;
     flex-direction: column;
     padding-right: 5rem;
@@ -658,11 +639,6 @@ input:invalid {
     font-weight: 400;
   }
 }
-
-span {
-  text-transform: uppercase;
-}
-
 .footer__contact--logo {
   padding-top: 4rem;
 }
@@ -679,4 +655,8 @@ span {
     padding-top: 4rem;
     right: 10rem;
   }
+}
+
+span {
+  text-transform: uppercase;
 }/*# sourceMappingURL=bio.css.map */
