@@ -1,24 +1,40 @@
+const apiKey = "aa154020-f3c7-48af-8ae5-869ffc281d18";
 
-const defaultComments = [
-        {
-            name: "Connor Walton",
-            date: "02/17/21",
-            text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+const bioComment = () => {
+    axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
+        .then(response => {
+          displayComment(response.data);
+          console.log(response.data)
+        })
 
-        },
-        {
-            name: "Emilie Beach",
-            date: "01/09/2021",
-            text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."  
+        .catch((error) =>{
+          console.log(error);
+        })
 
-        },
-        {
-            name: "Miles Acosta",
-            date: "12/20/2020",
-            text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
+}
+
+console.log(bioComment());
+
+// const defaultComments = [
+//         {
+//             name: "Connor Walton",
+//             date: "02/17/21",
+//             text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
+
+//         },
+//         {
+//             name: "Emilie Beach",
+//             date: "01/09/2021",
+//             text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."  
+
+//         },
+//         {
+//             name: "Miles Acosta",
+//             date: "12/20/2020",
+//             text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."
             
-        }
-];
+//         }
+// ];
 
 
 // target comment div and set to variable
@@ -49,7 +65,7 @@ function displayComment(object){
 
     let quote = document.createElement('p');
     quote.classList.add('comments__box--text');
-    quote.innerText = object[i]['text'];
+    quote.innerText = object[i]['comment'];
     paragraph.appendChild(quote);
 
     let time = document.createElement('div');
@@ -57,38 +73,50 @@ function displayComment(object){
 
     let commentDate = document.createElement('span');
     commentDate.classList.add('comments__box--date');
-    commentDate.innerText = object[i]['date'];
+    commentDate.innerText = object[i]['timestamp'];
     time.appendChild(commentDate);
     };
 
-  }
+}
 
-displayComment(defaultComments);
 
-// Add event listener to conversation form 
-let formEl = document.querySelector('#form');
+// // Add event listener to conversation form 
+//   let formEl = document.querySelector('#form');
 
-formEl.addEventListener('submit', function(event) {
-  event.preventDefault();
+//   formEl.addEventListener('submit', function(event) {
+//     // prevent refresh default
+//     event.preventDefault();
 
-// Define new comment parameter for user 
-  let yourComment = {};
-  
-  
-  yourComment.name = event.target.nameField.value;
-  yourComment.text = event.target.commentField.value;
-// Set current date when comment is loaded
-  let currentDate = new Date();
-  yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
 
-// displays new comment at top of list
-  defaultComments.unshift(yourComment);
-  displayComment(defaultComments);
+//     // grab form values
+//       const formInput = {
+      
+//         yourComment.name = event.target.nameField.value;
+//         yourComment.text = event.target.commentField.value;
+//       };
 
-// resets form
-  formEl.reset();
+//     // Set current date when comment is loaded
+//       let currentDate = new Date();
+//       yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
 
-});
+//       axios
+//         .post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, formInput)
+//         .then(response => {
+
+//           // displays new comment at top of list
+//           defaultComments.unshift(yourComment);
+//           displayComment(defaultComments);
+
+//         // resets form
+//           formEl.reset();
+
+//         })
+
+//         .catch(error => {
+//           alert(error.message);
+//         })  
+
+//   });
 
 
 

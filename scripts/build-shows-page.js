@@ -1,11 +1,14 @@
-const showsUrl =
-  "https://project-1-api.herokuapp.com/showdates?api_key=aa154020-f3c7-48af-8ae5-869ffc281d18";
+const apiKey = "aa154020-f3c7-48af-8ae5-869ffc281d18";
 
 const displayShows = () => {
-    return axios.get(showsUrl)
+    return axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
       .then(response => {
       loop(response.data);
       console.log(response.data)
+      // const newDate = parseInt(show.date);
+      // const yearDate = new Date(newDate * 1000);
+      // console.log(yearDate);
+      
     }) 
 
     .catch((error) => {
@@ -148,7 +151,7 @@ for (let i = 0; i < showsList.length; i++) {
 
 let clickRow = document.querySelector(".shows__container");
 
-clickRow.onclick = (event) => {
+clickRow.addEventListener = (event) => {
   let clickedShow = event.currentTarget;
   clickedShow.classList.add("shows__container--active");
 
