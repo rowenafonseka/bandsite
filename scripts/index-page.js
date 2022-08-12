@@ -8,12 +8,12 @@ const bioComment = () => {
         })
 
         .catch((error) =>{
-          console.log(error);
+          console.log(error)
         })
 
 }
 
-console.log(bioComment());
+bioComment();
 
 // const defaultComments = [
 //         {
@@ -80,43 +80,54 @@ function displayComment(object){
 }
 
 
-// // Add event listener to conversation form 
-//   let formEl = document.querySelector('#form');
+// Add event listener to conversation form 
+let formEl = document.querySelector('#form');
 
-//   formEl.addEventListener('submit', function(event) {
-//     // prevent refresh default
-//     event.preventDefault();
+formEl.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  
+
+  const newComment = () => {
+    const yourComment = {}
+    yourComment.name = event.target.nameField.value;
+    yourComment.comment = event.target.commentField.value;
+
+   
+
+  // // Set current date when comment is loaded
+  //   let currentDate = new Date();
+  //   yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
+  
+  // displays new comment at top of list
+    // defaultComments.unshift(yourComment);
+    // displayComment(defaultComments);
+  
+   
+    axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, yourComment, {
+      headers: {"Content-Type": "application/json"}
+    
+    })
+
+    .then(response => {
+      wrap.innerHTML = "";
+      // displayComment(response.data);
+      // console.log(response.data)
+      bioComment();
+    })
+
+    .catch((error) =>{
+      console.log(error)
+    })
 
 
-//     // grab form values
-//       const formInput = {
-      
-//         yourComment.name = event.target.nameField.value;
-//         yourComment.text = event.target.commentField.value;
-//       };
+  // resets form
+    formEl.reset();
+  }
+  
+  newComment()
+});
 
-//     // Set current date when comment is loaded
-//       let currentDate = new Date();
-//       yourComment.date = (currentDate.getMonth() + 1) + '/' + currentDate.getDate() + '/' + currentDate.getFullYear();
-
-//       axios
-//         .post(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`, formInput)
-//         .then(response => {
-
-//           // displays new comment at top of list
-//           defaultComments.unshift(yourComment);
-//           displayComment(defaultComments);
-
-//         // resets form
-//           formEl.reset();
-
-//         })
-
-//         .catch(error => {
-//           alert(error.message);
-//         })  
-
-//   });
 
 
 
