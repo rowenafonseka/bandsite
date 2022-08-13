@@ -5,395 +5,321 @@
 @use "./partials/mixins" as *;
 
 
-.navigation {
-    // mobile
-    background-color: $black;
-    display: flex;
-    flex-direction: column;
-  
-    // tablet
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-  
-  &__logo {
-    // mobile
-    width: 30%;
-    margin: auto;
-    margin-top: 1.25rem;
-    
-    // tablet
-    @include tablet {
-      margin-left: 3rem;
-      padding-bottom: 2rem;
-      padding-top: 0.5rem;
-      margin-right: 0;
-      width: 20%;
-    }
-    // desktop
-    @include desktop{
-      width: 15%;
-      padding-left: 7rem;
-     margin-bottom: -1.5rem;
-    }
-  }
-  
-  &__sub {
-    // mobile
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0 0 0;
-  
-    // tablet
-    @include tablet {
-      padding: 2.5rem 5rem 0 0;
-    }
-  }
-  
-  &__tab {
-    text-decoration: none;
-    padding-left: 2.75rem;
-    padding-bottom: 1rem;
-    color: $mercury;
-    
-  }
-  
-  &__tab--active {
-    // mobile
-    color: $white;
-    font-weight: 700;
-    border-bottom: 3px solid $white;
-    padding-left: 3rem;
-    padding-right: 4rem;
-  
-    // tablet
-    @include tablet {
-      padding-right: 0;
-      padding-left: 0;
-      margin-left: 3rem;
-    }
-  }
-  
-  a:visited {
-    color: $white;
-  }
-
-  // mobile
-.hero{
+// mobile
+.hero {
   width: 100%;
-  background: linear-gradient(rgba($black, 0.5), rgba($black, 0.5) ), url(../Assets/Images/hero-shows.jpg);
+  background: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../Assets/Images/hero-shows.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
 
-  @include desktop{
+  @include desktop {
     display: flex;
     justify-content: space-around;
   }
+
+
+  &__text {
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding-left: 1.5rem;
+      padding-top: 2rem;
+    }
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      padding-left: 5rem;
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+
+    }
   }
 
-&__text{
-  padding-left: 0.5rem;
-  padding-top: 1rem;
+  &__text--album {
+    color: $white;
+    font-size: 1.25rem;
+    font-weight: 400;
 
-  @include tablet{
-    padding-left: 1.5rem;
-    padding-top: 2rem;
+    @include tablet {
+      @include large-subheader
+    }
   }
 
-  @include desktop{
-    display: flex;
-    flex-direction: column;
-    padding-left: 5rem;
-    padding-top: 4rem;
+  &__text--title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: $white;
+    padding-right: 6rem;
     padding-bottom: 2rem;
-    
+
+    @include tablet {
+      padding-right: 20rem;
+      padding-bottom: 2.5rem;
+
+      @include large-header
+    }
+
+    @include desktop {
+      padding-right: 5rem;
+      padding-top: 0;
+      padding-bottom: 8rem;
+    }
+  }
+
+  &__song {
+    height: 140px;
+    padding: 0 1rem 1.5rem 1rem;
+    border-radius: 4px;
+
+    @include tablet {
+      width: 50%;
+      height: 170px;
+      padding-left: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @include desktop {
+      width: 70%;
+      margin-top: 13rem;
+    }
   }
 }
-
-&__text--album{
-  color: $white;
-  font-size: 1.25rem;
-  font-weight: 400;
-  
-  @include tablet{
-    @include large-subheader
-
-  }
-}
-
-&__text--title{
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-  color: $white;
-  padding-right: 6rem;
-  padding-bottom: 2rem;
-  
-  @include tablet{
-   padding-right: 20rem;
-   padding-bottom: 2.5rem;
-
-    @include large-header
-  }
-  
-  @include desktop {
-    padding-right: 5rem;
-    padding-top: 0;
-    padding-bottom: 8rem;
-  }
-}
-
-&__song{
-  height: 140px;
-  padding: 0 1rem 1.5rem 1rem;
-  border-radius: 4px;
-
-  @include tablet{
-    width: 50%;
-    height: 170px;
-    padding-left: 3rem;
-    padding-bottom: 3rem;
-  }
-
-  @include desktop{
-    width: 70%;
-    margin-top: 13rem;
-  }
-}
-
 
 // Shows Section 
-#wrapper{
+#wrapper {
   padding-left: 1rem;
-  
-  @include desktop{
+
+  @include desktop {
     padding-left: 7.5rem;
     padding-right: 7rem
   }
-}
 
-&__title{
-  @include mobile-bold;
-  padding: 1.5rem 0 1rem 0;
 
-  @include tablet{
-    margin-left: 2rem;
-    @include large-section;
-  }
-}
-
-&__container{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-left: 0;
-  padding-bottom: .5rem;
-  font-size: .8125rem;
-  font-weight: 400;
-  line-height: 1.125rem;
-  border-bottom: 1px solid $mercury;
-
-  @include tablet{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    // margin:0 2rem 0 2rem;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 1.75rem;
-    font-size: 1rem;
-  } 
-}
-
-&__container--active{
-  background-color: $mercury;
-}
-
-&__container:hover{
-  background-color: $alabaster;
-}
-
-&__info{
-  padding-left: 0;
-  padding-bottom: .75rem;
-
-}
-
-&__labels{
-  display: none;
-
-  @include tablet{
-    display: flex;
-    justify-content: space-between;
-    padding-right: 30rem;
-    padding-left: 2rem;
-    
-  }
-}
-
-&__info--label{
-  text-transform: uppercase;
-  color: $mercury;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  padding-bottom: 0;
-  
-  @include tablet{
-    font-size: .75rem;
-    line-height: 20px;
-  }
-}
-
-&__info--labelHide{
-  text-transform: uppercase;
-  color: $mercury;
-  font-size: 0.625rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  padding-bottom: 0;
-
-  @include tablet{
-    display: none;
-  }
-}
-
-&__info--date{
-  font-weight: 700;
-  font-size: .8125rem;
-  line-height: 1.125rem;
-  padding-bottom: 0;
-
-  @include tablet{
-    font-size: 1rem;
-  }
-}
-
-&__button{
-  
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1rem;
-  padding: .5rem 6rem ;
-  background-color: $black;
-  border-radius: 4px;
-  color: $white;
-  margin-bottom: 1rem;
-
-  @include tablet{
-    padding-left: 4rem;
-    padding-right: 4rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-}
-
-  .footer {
-    background-color: $black;
-    color: $white;
-  
-    @include tablet{
-      position: relative;
-    }
-  
-  }
-  
-  // tablet
-  &__container {
-    @include tablet {
-      display: flex;
-      justify-content: flex-start;
-      padding-left: 0;
-    }
-    // desktop
-    @include desktop{
-      padding-top: 2rem;
-      padding-left: 7rem;
-    }
-  }
-  
-  // mobile
-  &__container--heading {
+  &__title {
     @include mobile-bold;
-    padding: 1.5rem 0 1rem 1rem;
-  
-    // tablet
+    padding: 1.5rem 0 1rem 0;
+
     @include tablet {
+      margin-left: 2rem;
       @include large-section;
-      padding-left: 2.25rem;
     }
   }
-  
-  // mobile
-  &__social {
-    padding: 0 0 1rem 1rem;
-  
-    // tablet
-    @include tablet {
-      padding: 2.25rem 0 0 2.25rem;
-    }
-  }
-  
-  &__icon {
-    padding-right: 1.5rem;
-  }
-  
-  // mobile
-  &__contact {
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-  
-    // tablet
-    @include tablet {
-      display: flex;
-      padding-left: 2.25rem;
-    }
-  
-    // desktop
-    @include desktop{
-      padding-bottom: 2rem;
-      padding-left: 9rem;
-    }
-  }
-  
-  &__contact--name {
-    padding-bottom: 1rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding-left: 0;
-    @include mobile-body;
-  
-  // tablet
-    @include tablet{
+    padding-bottom: .5rem;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    border-bottom: 1px solid $mercury;
+
+    @include tablet {
       display: flex;
-      flex-direction: column;
-      padding-right: 5rem;
-      @include large-footer;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      // margin:0 2rem 0 2rem;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 1.75rem;
+      font-size: 1rem;
     }
   }
-  
-  span {
+
+  &__container--active {
+    background-color: $mercury;
+  }
+
+  &__container:hover {
+    background-color: $alabaster;
+  }
+
+  &__info {
+    padding-left: 0;
+    padding-bottom: .75rem;
+
+  }
+
+  &__labels {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 30rem;
+      padding-left: 2rem;
+
+    }
+  }
+
+  &__info--label {
     text-transform: uppercase;
-  }
-  
-  &__contact--logo {
-    padding-top: 4rem;
-  
-    @include tablet{
-      position: absolute;
-      top: 0;
-      right: 2.0625rem;
-      padding-top: 2rem;  
+    color: $mercury;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    padding-bottom: 0;
+
+    @include tablet {
+      font-size: .75rem;
+      line-height: 20px;
     }
-  
-  // desktop
-  @include desktop{
-    padding-top: 4rem;
-    right: 10rem;
   }
+
+  &__info--labelHide {
+    text-transform: uppercase;
+    color: $mercury;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    padding-bottom: 0;
+
+    @include tablet {
+      display: none;
+    }
   }
-  
+
+  &__info--date {
+    font-weight: 700;
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    padding-bottom: 0;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  &__button {
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: .5rem 6rem;
+    background-color: $black;
+    border-radius: 4px;
+    color: $white;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+// .footer {
+//   background-color: $black;
+//   color: $white;
+
+//   @include tablet {
+//     position: relative;
+//   }
+
+
+
+//   // tablet
+//   &__container {
+//     @include tablet {
+//       display: flex;
+//       justify-content: flex-start;
+//       padding-left: 0;
+//     }
+
+//     // desktop
+//     @include desktop {
+//       padding-top: 2rem;
+//       padding-left: 7rem;
+//     }
+//   }
+
+//   // mobile
+//   &__container--heading {
+//     @include mobile-bold;
+//     padding: 1.5rem 0 1rem 1rem;
+
+//     // tablet
+//     @include tablet {
+//       @include large-section;
+//       padding-left: 2.25rem;
+//     }
+//   }
+
+//   // mobile
+//   &__social {
+//     padding: 0 0 1rem 1rem;
+
+//     // tablet
+//     @include tablet {
+//       padding: 2.25rem 0 0 2.25rem;
+//     }
+//   }
+
+//   &__icon {
+//     padding-right: 1.5rem;
+//   }
+
+//   // mobile
+//   &__contact {
+//     padding-bottom: 1rem;
+//     padding-left: 1rem;
+//     padding-top: 0.5rem;
+
+//     // tablet
+//     @include tablet {
+//       display: flex;
+//       padding-left: 2.25rem;
+//     }
+
+//     // desktop
+//     @include desktop {
+//       padding-bottom: 2rem;
+//       padding-left: 9rem;
+//     }
+//   }
+
+//   &__contact--name {
+//     padding-bottom: 1rem;
+//     padding-left: 0;
+//     @include mobile-body;
+
+//     // tablet
+//     @include tablet {
+//       display: flex;
+//       flex-direction: column;
+//       padding-right: 5rem;
+//       @include large-footer;
+//     }
+//   }
+// }
+
+// span {
+//   text-transform: uppercase;
+// }
+
+// &__contact--logo {
+//   padding-top: 4rem;
+
+//   @include tablet {
+//     position: absolute;
+//     top: 0;
+//     right: 2.0625rem;
+//     padding-top: 2rem;
+//   }
+
+//   // desktop
+//   @include desktop {
+//     padding-top: 4rem;
+//     right: 10rem;
+//   }
+// }

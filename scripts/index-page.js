@@ -111,6 +111,7 @@ formEl.addEventListener('submit', function(event) {
 
     .then(response => {
       wrap.innerHTML = "";
+    
       // displayComment(response.data);
       // console.log(response.data)
       bioComment();

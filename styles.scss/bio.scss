@@ -4,256 +4,182 @@
 @use "./partials/breakpoints" as *;
 @use "./partials/mixins" as *;
 
-.navigation {
-    // mobile
-    background-color: $black;
-    display: flex;
-    flex-direction: column;
 
-    // tablet
-   @include tablet {
-    display: flex;
-    flex-direction: row;
-   }
-}
-
-.navigation__logo {
-  // mobile
-  width: 30%;
-  margin: auto;
-  margin-top: 1.25rem;
-  
-
-  // tablet
-  @include tablet {
-    margin-left: 3rem;
-    padding-bottom: 2rem;
-    padding-top: 0.5rem;
-    margin-right: 0;
-    width: 20%;
-  }
-  // desktop
-  @include desktop{
-    width: 15%;
-    padding-left: 7rem;
-   margin-bottom: -1.5rem;
-  }
-}
-
-.navigation__sub {
-  // mobile
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 4rem 0 0;
-
-  // tablet
-  @include tablet {
-    padding: 2.5rem 5rem 0 0;
-  }
-}
-
-.navigation__tab {
-  text-decoration: none;
-  padding-left: 3rem;
-  padding-bottom: 1rem;
-  color: $mercury;
-}
-
-.navigation__tab--active {
-  // mobile
-  color: $white;
-  font-weight: 700;
-  border-bottom: 3px solid $white;
-  padding-right: 2rem;
-
-  // tablet
-  @include tablet {
-    padding-right: 0;
-    padding-left: 0;
-    margin-left: 3rem;
-  }
-}
-
-a:visited {
-  color: $white;
-}
 
 // mobile
-.hero{
+.hero {
   display: flex;
-  height:40vh;
+  height: 40vh;
   min-width: 100%;
   position: relative;
   background-size: cover;
   background-image: url(../Assets/Images/hero-bio.jpg);
 
 
-        //tablet
+  //tablet
+  @include tablet {
+    height: 100vh;
+    min-width: 100%;
+  }
+
+  &__opacity {
+    position: absolute;
+    background-color: $black;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+
+  }
+
+  // mobile
+  &__title {
+    // position: relative;
+    padding: 5.5rem 0 1rem 1rem;
+    color: $white;
+    z-index: 1;
+
+    @include mobile-bold;
+
+    // tablet
     @include tablet {
-      height: 100vh;
-      min-width: 100%;
-    }
-
-    &__opacity{
-      position: absolute;
-      background-color: $black;
-      height: 100%;
-      width: 100%;
-      opacity: 0.5;
-      top: 0px;
-      bottom: 0px;
-      right: 0px;
-      left: 0px;
-    
-    
-    }
-
-    // mobile
-    &__title {
-      // position: relative;
-      padding: 5.5rem 0 1rem 1rem;
-      color: $white;
-      z-index: 1;
- 
-     @include mobile-bold;
- 
-   // tablet
-      @include tablet {
       padding-top: 15rem;
       padding-left: 3rem;
       @include large-header;
-  }
-   
-   // desktop
+    }
+
+    // desktop
     @include desktop {
-     padding-left: 10rem;
-     @include large-header;
+      padding-left: 10rem;
+      @include large-header;
     }
   }
 
 }
 
 
-
 // mobile
 .header {
-    @include mobile-bold;
-    padding: 1.5rem 0 0 1rem;
+  @include mobile-bold;
+  padding: 1.5rem 0 0 1rem;
 
-    // tablet
-    @include tablet {
+  // tablet
+  @include tablet {
     @include large-section;
     padding: 3rem 2.25rem 1rem 3rem;
-    }
+  }
 
-    // desktop
-   @include desktop{
+  // desktop
+  @include desktop {
     @include large-section;
     padding-bottom: 3rem;
     padding-left: 9rem;
-   }
+  }
 
   // mobile
-    &__img {
+  &__img {
     max-width: 100%;
     height: auto;
     padding-right: 1rem;
-  
-  // tablet
+
+    // tablet
     @include tablet {
-    padding: 0 6.5rem 0 6.5rem;
+      padding: 0 6.5rem 0 6.5rem;
     }
 
-  // desktop
-    @include desktop{
-    padding-left: 12rem;
-    padding-right: 12rem;
+    // desktop
+    @include desktop {
+      padding-left: 12rem;
+      padding-right: 12rem;
     }
   }
 
-// mobile
+  // mobile
   &__quote {
     @include mobile-subheader;
     padding-right: 1rem;
-  
-  
-  // tablet
+
+
+    // tablet
     @include tablet {
-    @include large-subheader;
-    padding: 1rem 6.5rem 0 6.5rem;
+      @include large-subheader;
+      padding: 1rem 6.5rem 0 6.5rem;
     }
 
-  // desktop
-  @include desktop{
-    padding-left: 12rem;
-    padding-right: 32rem;
+    // desktop
+    @include desktop {
+      padding-left: 12rem;
+      padding-right: 32rem;
     }
   }
 
-// mobile
+  // mobile
   &__subheader {
     padding: 1rem 0 1rem 1rem;
     @include mobile-subheader;
 
-  // tablet
+    // tablet
     @include tablet {
-    @include large-subheader;
-    padding-top: 2.25rem;    
-    padding-left: 6.5rem; 
+      @include large-subheader;
+      padding-top: 2.25rem;
+      padding-left: 6.5rem;
     }
 
-  // desktop
-    @include desktop{
-    @include large-subheader;
-    padding-left: 12rem;
+    // desktop
+    @include desktop {
+      @include large-subheader;
+      padding-left: 12rem;
     }
   }
 
-// mobile
+  // mobile
   &__body {
     @include mobile-body;
     padding: 0 0.5rem 1rem 0.5rem;
-  
 
-  // tablet
+
+    // tablet
     @include tablet {
-    display: flex;
-    justify-content:space-around;
-    padding-left: 2.5rem;
-    padding-right: 2rem;    
+      display: flex;
+      justify-content: space-around;
+      padding-left: 2.5rem;
+      padding-right: 2rem;
     }
 
-  // desktop
-    @include desktop{
-    padding-left: 8rem;
-    padding-right: 10rem;
-  
+    // desktop
+    @include desktop {
+      padding-left: 8rem;
+      padding-right: 10rem;
+
     }
   }
 
-// mobile
+  // mobile
   &__body--paragraph1 {
     padding-bottom: 1rem;
     color: $black;
 
-  // tablet
-   @include tablet {
-    padding-top: 1rem;
-    padding-right: 6.25rem;
-    padding-left: 4rem;
-    @include large-body;
-   }
+    // tablet
+    @include tablet {
+      padding-top: 1rem;
+      padding-right: 6.25rem;
+      padding-left: 4rem;
+      @include large-body;
+    }
   }
 
   &__body--paragraph2 {
     padding-bottom: 1rem;
 
-  // tablet
+    // tablet
     @include tablet {
-    padding-top: 1rem;
-    padding-right: 6.25rem;
-    padding-left: 1rem;
-    @include large-body;
+      padding-top: 1rem;
+      padding-right: 6.25rem;
+      padding-left: 1rem;
+      @include large-body;
     }
   }
 
@@ -265,36 +191,37 @@ a:visited {
   flex-direction: column;
   align-items: center;
 
-    @include tablet {
+  @include tablet {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
   }
+
   // mobile
   &__header {
     padding: 1.5rem 8rem 1rem 1rem;
     @include mobile-bold;
 
-  // tablet
+    // tablet
     @include tablet {
-    @include large-section;
-    padding: 3rem 0 2.25rem 2.25rem;
+      @include large-section;
+      padding: 3rem 0 2.25rem 2.25rem;
     }
 
-  // desktop
-    @include desktop{
-    padding-left: 9rem;
+    // desktop
+    @include desktop {
+      padding-left: 9rem;
     }
   }
 
-  &__container{
-    @include tablet{
-    padding: 0 0.75rem 1rem 1rem;
+  &__container {
+    @include tablet {
+      padding: 0 0.75rem 1rem 1rem;
     }
 
-    @include desktop{
-    padding-left: 8rem;
-    padding-right: 8rem;
+    @include desktop {
+      padding-left: 8rem;
+      padding-right: 8rem;
     }
   }
 
@@ -304,121 +231,121 @@ a:visited {
     padding: 0 1rem 1rem 1rem;
 
     @include tablet {
-    width: 33%; 
+      width: 33%;
     }
   }
 
-  &__header{
+  &__header {
     font-size: 1.5rem;
     font-weight: 700;
     color: $black;
     line-height: 2rem;
     padding: 1.5rem 0 1rem 1rem;
 
-    @include tablet{
-    @include large-section;
-    padding: 3rem 0 1rem 2.25rem;
+    @include tablet {
+      @include large-section;
+      padding: 3rem 0 1rem 2.25rem;
     }
 
-    @include desktop{
-    padding-left: 9rem;
+    @include desktop {
+      padding-left: 9rem;
     }
   }
 
-// mobile
-    &__text{
+  // mobile
+  &__text {
     display: flex;
     justify-content: center;
 
-    @include tablet{
-    justify-content: flex-start;
-    margin-left: 5rem;
+    @include tablet {
+      justify-content: flex-start;
+      margin-left: 5rem;
     }
 
-   @include desktop{
-    margin-left: 24rem;
+    @include desktop {
+      margin-left: 24rem;
 
     }
   }
 
 }
 
-#form{
+#form {
 
-    @include tablet{
+  @include tablet {
     margin-bottom: 5rem;
   }
 }
 
 // mobile
-  .conversation__text--avatar{
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    margin-left: 1rem;
-    margin-top: 1.375rem;
+.conversation__text--avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  margin-left: 1rem;
+  margin-top: 1.375rem;
 }
 
-  .conversation__container{
-    margin-left: 1rem;
-    padding-right: 1rem;
+.conversation__container {
+  margin-left: 1rem;
+  padding-right: 1rem;
 
-    @include tablet{
+  @include tablet {
     position: relative;
-    
+
   }
 
 }
 
-  .conversation__text--label{
-    text-transform: uppercase;
-    color: #AFAFAF;
-    padding-bottom: .25rem;
-    justify-content: flex-start;
-    font-size: .625rem;
-    font-weight: 700;
-    line-height: 1.25rem;
+.conversation__text--label {
+  text-transform: uppercase;
+  color: #AFAFAF;
+  padding-bottom: .25rem;
+  justify-content: flex-start;
+  font-size: .625rem;
+  font-weight: 700;
+  line-height: 1.25rem;
 
-    @include tablet{
+  @include tablet {
     font-size: .75rem;
   }
-  
+
 }
 
-  .conversation__text--name{
-    width: 100%;
-    min-width: 10rem;
-    height: 2.25rem;
-    border-radius: .25rem;
-    padding-left: .75rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid $mercury;
-    text-align: left;
+.conversation__text--name {
+  width: 100%;
+  min-width: 10rem;
+  height: 2.25rem;
+  border-radius: .25rem;
+  padding-left: .75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid $mercury;
+  text-align: left;
 
-    @include tablet{
-      min-width: 31rem;
-      
-    }
-  
-    @include desktop{
-      min-width: 28rem;
-    }
+  @include tablet {
+    min-width: 31rem;
+
+  }
+
+  @include desktop {
+    min-width: 28rem;
+  }
 }
 
 input:invalid {
   border: 1px solid red;
 }
 
-  .conversation__text--comment{
-    width: 100%;
-    height: 7rem;
-    border-radius: .25rem;
-    padding: .75rem;
-    margin-bottom: 1rem;
-    border: 1px solid $mercury;
+.conversation__text--comment {
+  width: 100%;
+  height: 7rem;
+  border-radius: .25rem;
+  padding: .75rem;
+  margin-bottom: 1rem;
+  border: 1px solid $mercury;
 }
 
-::placeholder{
+::placeholder {
   color: $black;
   font-size: 1rem;
   font-weight: 400;
@@ -426,20 +353,20 @@ input:invalid {
 
 }
 
-  .conversation__button{
-    height: 2.5rem;
-    width: 100%;
-    background-color: $black;
-    color: $white;
-    text-transform: uppercase;
-    border-radius: 4px;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    border: 0;
+.conversation__button {
+  height: 2.5rem;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border: 0;
 
-   @include tablet{
+  @include tablet {
     width: 9.375rem;
     position: absolute;
     top: 220px;
@@ -448,46 +375,46 @@ input:invalid {
   }
 }
 
-.input-field input[type=text]:invalid{
+.input-field input[type=text]:invalid {
   border: red;
 }
 
-  .comments__box{
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid $mercury;
-    padding-top: 2rem;
-    height: 17rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+.comments__box {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid $mercury;
+  padding-top: 2rem;
+  height: 17rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 
-    @include tablet{
-      margin-left: 6rem;
-      margin-right: 7rem;
-      height: 10rem;
-    }
+  @include tablet {
+    margin-left: 6rem;
+    margin-right: 7rem;
+    height: 10rem;
+  }
 
-    @include desktop{
-      margin-left: 25rem;
-      margin-right: 29rem;
+  @include desktop {
+    margin-left: 25rem;
+    margin-right: 29rem;
 
-    }
+  }
 }
 
-  .comments__box--avatar{
-    width: 2.25rem;
-    height:2.25rem;
-    border-radius: 50%;
-    background-color: $mercury;
-    margin-left: .5rem;
-    padding-right: 2.25rem;
+.comments__box--avatar {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: $mercury;
+  margin-left: .5rem;
+  padding-right: 2.25rem;
 
-    @include tablet{
+  @include tablet {
     margin-left: 0;
   }
 }
 
-.comments__box--paragraph{
+.comments__box--paragraph {
   font-size: .8125rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -496,133 +423,27 @@ input:invalid {
 
 }
 
-  .comments__box--name{
-    margin-bottom: 1rem;
-    font-weight: 700;
+.comments__box--name {
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-  .comments__box--text{
-    padding-top: 1rem;
-    font-size: 13px;
-    line-height: 1.125rem;
+.comments__box--text {
+  padding-top: 1rem;
+  font-size: 13px;
+  line-height: 1.125rem;
 }
 
 
-  .comments__box--date{
-    font-size: .8125rem;
-    line-height: 1.125rem;
-    font-weight: 400;
-    color: $mercury;
-    padding-right: 0;
+.comments__box--date {
+  font-size: .8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  color: $mercury;
+  padding-right: 0;
 
 
-  @include tablet{
-    padding-right: 0;
-  }
-}
-
-.footer {
-  background-color: $black;
-  color: $white;
-
-    @include tablet{
-    position: relative;
-
-    }
-
-// tablet
-  &__container {
-    @include tablet {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 0;
-  }
-// desktop
-    @include desktop{
-    padding-top: 2rem;
-    padding-left: 7rem;
-    }
-  }
-
-// mobile
-  &__container--heading {
-    @include mobile-bold;
-    padding: 1.5rem 0 1rem 1rem;
-
-// tablet
-    @include tablet {
-    @include large-section;
-    padding-left: 2.25rem;
-    }
-  }
-
-// mobile
-  &__social {
-  padding: 0 0 1rem 1rem;
-
-// tablet
   @include tablet {
-  padding: 2.25rem 0 0 2.25rem;
-    }
+    padding-right: 0;
   }
-
-  &__icon {
-  padding-right: 1.5rem;
-  }
-
-// mobile
-  &__contact {
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-
-// tablet
-    @include tablet {
-    display: flex;
-    padding-left: 2.25rem;
-  }
-
-// desktop
-    @include desktop{
-    padding-bottom: 2rem;
-    padding-left: 9rem;
-    }
-  }
-
-  &__contact--name {
-   padding-bottom: 1rem;
-    padding-left: 0;
-    @include mobile-body;
-  }
-
-// tablet
-   @include tablet{
-    display: flex;
-    flex-direction: column;
-    padding-right: 5rem;
-    @include large-footer;
-    }
-
-
-  &__contact--logo {
-    padding-top: 4rem;
-
-    @include tablet{
-      position: absolute;
-      top: 0;
-      right: 2.0625rem;
-      padding-top: 2rem;  
-    }
-
-  // desktop
-    @include desktop{
-    padding-top: 4rem;
-    right: 10rem;
-    }
-  }
-}
-
-
-span {
-  text-transform: uppercase;
 }
