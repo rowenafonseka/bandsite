@@ -4,32 +4,20 @@ const displayShows = () => {
     return axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
       .then(response => {
       loop(response.data);
-      console.log(response.data) 
-
-      const clickRow = document.querySelectorAll(".shows__container");
-
-     for (let i = 0; i < clickRow.length; i++) {
-        
-      clickRow.addEventListener = (event) => {
-      const clickedShow = event.currentTarget;
-      clickedShow.classList.add("shows__container--active");
-        
-      if (clickedShow !== clickRow) {
-      clickRow.classList.remove("shows__container--active");
-      } else {
-            clickRow.classList.add("shows__container--active");
-            }
-          }
-      };
-
-      
+      console.log(response.data)
+      highlight();
     }) 
 
-    .catch((error) => {
+      .catch((error) => {
       console.log(error);
     })
+
+  
 };
 console.log(displayShows());
+
+
+
 
 
 // const showsList = [
@@ -161,22 +149,28 @@ for (let i = 0; i < showsList.length; i++) {
   button.classList.add("shows__button");
   button.innerText = "buy tickets";
   nextShow.appendChild(button);
-}
+  }
 
-// const clickRow = document.querySelectorAll(".shows__container");
-
-//   for (let i = 0; i < clickRow.length; i++) {
-
-//     clickRow.addEventListener = (event) => {
-//       let clickedShow = event.currentTarget;
-//       clickedShow.classList.add("shows__container--active");
-
-//     if (clickedShow !== clickRow) {
-//       clickRow.classList.remove("shows__container--active");
-//     } else {
-//       clickRow.classList.add("shows__container--active");
-//     }
-//   }
-// };
+  
 
  }
+
+  function highlight(){
+    const clickRow = document.querySelectorAll(".shows__container");
+   
+    for (let i = 0; i < clickRow.length; i++) {
+
+      clickRow.addEventListener = (click, event) => {
+      let clickedShow = event.currentTarget;
+      clickedShow.classList.add("shows__container--active");
+
+        if (clickedShow !== clickRow) {
+          clickRow.classList.remove("shows__container--active");
+        }   else {
+          clickRow.classList.add("shows__container--active");
+        }
+      }
+    }
+
+  }
+
