@@ -1,10 +1,13 @@
 const apiKey = "aa154020-f3c7-48af-8ae5-869ffc281d18";
 
+// Use API to render data
 const displayShows = () => {
     return axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
       .then(response => {
       loop(response.data);
       console.log(response.data)
+
+// call function to highlight clicked rows
       highlight();
     }) 
 
@@ -17,59 +20,6 @@ const displayShows = () => {
 console.log(displayShows());
 
 
-
-
-
-// const showsList = [
-//   {
-//     labelDate: "date",
-//     date: "Mon Sept 06 2021",
-//     labelVenue: "venue",
-//     venue: "Ronald Lane",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     labelDate: "date",
-//     date: "Tues Sept 21 2021",
-//     labelVenue: "venue",
-//     venue: "Pier 3 East",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     labelDate: "date",
-//     date: "Fri Oct 15 2021",
-//     labelVenue: "venue",
-//     venue: "View Lounge",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     labelDate: "date",
-//     date: "Sat Nov 06 2021",
-//     labelVenue: "venue",
-//     venue: "Hyatt Agency",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     labelDate: "date",
-//     date: "Fri Nov 26 2021",
-//     labelVenue: "venue",
-//     venue: "Moscow Center",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     labelDate: "date",
-//     date: "Wed Dec 15 2021",
-//     labelVenue: "venue",
-//     venue: "Press Club",
-//     labelLocation: "location",
-//     location: "San Francisco, CA",
-//   },
-// ];
 
 const newTitle = document.createElement("h2");
 const shows = document.getElementById("wrapper");
@@ -97,6 +47,7 @@ labelContainer.appendChild(showDate);
 labelContainer.appendChild(showVenue);
 labelContainer.appendChild(showLocation);
 
+// function to loop through shows data to be rendered above 
  function loop(showsList){
 console.log(showsList[0]);
 for (let i = 0; i < showsList.length; i++) {
@@ -116,7 +67,7 @@ for (let i = 0; i < showsList.length; i++) {
 
   let dates = document.createElement("p");
   dates.classList.add("shows__info--date");
-  dates.innerText = showsList[i].date;
+  dates.innerText = new Date(showsList[i].date).toLocaleDateString();
   subContainer.appendChild(dates);
 
   let subContainerOne = document.createElement("div");
@@ -151,10 +102,9 @@ for (let i = 0; i < showsList.length; i++) {
   nextShow.appendChild(button);
   }
 
-  
-
  }
 
+//  function to select rows to and add click event listener
   function highlight(){
     const clickRow = document.querySelectorAll(".shows__container");
    
