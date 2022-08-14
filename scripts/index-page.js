@@ -93,7 +93,7 @@ formEl.addEventListener('submit', function(event) {
     yourComment.name = event.target.nameField.value;
     yourComment.comment = event.target.commentField.value;
 
-   
+  
 
   // // Set current date when comment is loaded
   //   let currentDate = new Date();
@@ -111,10 +111,13 @@ formEl.addEventListener('submit', function(event) {
 
     .then(response => {
       wrap.innerHTML = "";
+      
     
       // displayComment(response.data);
       // console.log(response.data)
       bioComment();
+      
+    
     })
 
     .catch((error) =>{

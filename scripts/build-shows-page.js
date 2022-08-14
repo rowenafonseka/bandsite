@@ -4,10 +4,24 @@ const displayShows = () => {
     return axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`)
       .then(response => {
       loop(response.data);
-      console.log(response.data)
-      // const newDate = parseInt(show.date);
-      // const yearDate = new Date(newDate * 1000);
-      // console.log(yearDate);
+      console.log(response.data) 
+
+      const clickRow = document.querySelectorAll(".shows__container");
+
+     for (let i = 0; i < clickRow.length; i++) {
+        
+      clickRow.addEventListener = (event) => {
+      const clickedShow = event.currentTarget;
+      clickedShow.classList.add("shows__container--active");
+        
+      if (clickedShow !== clickRow) {
+      clickRow.classList.remove("shows__container--active");
+      } else {
+            clickRow.classList.add("shows__container--active");
+            }
+          }
+      };
+
       
     }) 
 
@@ -108,7 +122,7 @@ for (let i = 0; i < showsList.length; i++) {
   nextShow.appendChild(subContainer);
 
   let dateLabel = document.createElement("p");
-  dateLabel.classList.add("shows__info--labelHide");
+  dateLabel.classList.add("shows__info--label-hide");
   dateLabel.innerText = showsList[i].labelDate;
   subContainer.appendChild(dateLabel);
 
@@ -122,7 +136,7 @@ for (let i = 0; i < showsList.length; i++) {
   nextShow.appendChild(subContainerOne);
 
   let venueLabel = document.createElement("p");
-  venueLabel.classList.add("shows__info--labelHide");
+  venueLabel.classList.add("shows__info--label-hide");
   venueLabel.innerText = showsList[i].labelVenue;
   subContainerOne.appendChild(venueLabel);
 
@@ -135,7 +149,7 @@ for (let i = 0; i < showsList.length; i++) {
   nextShow.appendChild(subContainerTwo);
 
   let addressLabel = document.createElement("p");
-  addressLabel.classList.add("shows__info--labelHide");
+  addressLabel.classList.add("shows__info--label-hide");
   addressLabel.innerText = showsList[i].labelLocation;
   subContainerTwo.appendChild(addressLabel);
 
@@ -149,19 +163,20 @@ for (let i = 0; i < showsList.length; i++) {
   nextShow.appendChild(button);
 }
 
-let clickRow = document.querySelector(".shows__container");
+// const clickRow = document.querySelectorAll(".shows__container");
 
-clickRow.addEventListener = (event) => {
-  let clickedShow = event.currentTarget;
-  clickedShow.classList.add("shows__container--active");
+//   for (let i = 0; i < clickRow.length; i++) {
 
-  for (let i = 0; i < clickRow.length; i++) {
-    if (clickedShow !== clickRow) {
-      clickRow.classList.remove("shows__container--active");
-    } else {
-      clickRow.classList.add("shows__container--active");
-    }
-  }
-};
+//     clickRow.addEventListener = (event) => {
+//       let clickedShow = event.currentTarget;
+//       clickedShow.classList.add("shows__container--active");
+
+//     if (clickedShow !== clickRow) {
+//       clickRow.classList.remove("shows__container--active");
+//     } else {
+//       clickRow.classList.add("shows__container--active");
+//     }
+//   }
+// };
 
  }

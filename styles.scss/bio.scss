@@ -22,22 +22,20 @@
     width: 30%;
     margin: auto;
     margin-top: 1.25rem;
+    margin-left: 7.5rem;
 
 
     // tablet
     @include tablet {
-      margin-left: 3rem;
-      padding-bottom: 2rem;
-      padding-top: 0.5rem;
-      margin-right: 0;
-      width: 20%;
+      margin: 2rem 2rem 0 3rem;
+      width: 80%;
     }
 
     // desktop
     @include desktop {
-      width: 15%;
-      padding-left: 7rem;
-      margin-bottom: -1.5rem;
+      width: 80%;
+      padding-left: 6rem;
+      margin-top: 2.5rem;
     }
   }
 
@@ -51,13 +49,18 @@
     @include tablet {
       padding: 2.5rem 5rem 0 0;
     }
+
   }
 
   &__tab {
     text-decoration: none;
     padding-left: 3rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     color: $mercury;
+
+    @include desktop {
+      padding-bottom: 2rem;
+    }
   }
 
   &__tab--active {
@@ -67,12 +70,15 @@
     border-bottom: 3px solid $white;
     padding-right: 2rem;
 
+
     // tablet
     @include tablet {
       padding-right: 0;
       padding-left: 0;
       margin-left: 3rem;
     }
+
+
   }
 
   a:visited {
@@ -81,6 +87,7 @@
 
 }
 
+
 // mobile
 .hero {
   display: flex;
@@ -88,12 +95,12 @@
   min-width: 100%;
   position: relative;
   background-size: cover;
-  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-image: url(../assets/images/hero-bio.jpg);
 
 
   //tablet
   @include tablet {
-    height: 100vh;
+    height: 90vh;
     min-width: 100%;
   }
 
@@ -121,14 +128,15 @@
 
     // tablet
     @include tablet {
-      padding-top: 15rem;
+      padding-top: 12rem;
       padding-left: 3rem;
       @include large-header;
     }
 
     // desktop
     @include desktop {
-      padding-left: 10rem;
+      padding-left: 9rem;
+      padding-top: 15rem;
       @include large-header;
     }
   }
@@ -158,7 +166,7 @@
   &__img {
     max-width: 100%;
     height: auto;
-    padding-right: 1rem;
+    padding: 1rem;
 
     // tablet
     @include tablet {
@@ -167,15 +175,15 @@
 
     // desktop
     @include desktop {
-      padding-left: 12rem;
-      padding-right: 12rem;
+      padding-left: 15rem;
+      padding-right: 15rem;
     }
   }
 
   // mobile
   &__quote {
     @include mobile-subheader;
-    padding-right: 1rem;
+    padding: 0 1rem;
 
 
     // tablet
@@ -186,15 +194,18 @@
 
     // desktop
     @include desktop {
-      padding-left: 12rem;
+      padding-left: 15rem;
       padding-right: 32rem;
     }
   }
+
 
   // mobile
   &__subheader {
     padding: 1rem 0 1rem 1rem;
     @include mobile-subheader;
+
+
 
     // tablet
     @include tablet {
@@ -206,7 +217,8 @@
     // desktop
     @include desktop {
       @include large-subheader;
-      padding-left: 12rem;
+      padding-left: 15rem;
+
     }
   }
 
@@ -226,7 +238,7 @@
 
     // desktop
     @include desktop {
-      padding-left: 8rem;
+      padding-left: 11rem;
       padding-right: 10rem;
 
     }
@@ -240,7 +252,7 @@
     // tablet
     @include tablet {
       padding-top: 1rem;
-      padding-right: 6.25rem;
+      padding-right: 1rem;
       padding-left: 4rem;
       @include large-body;
     }
@@ -274,7 +286,8 @@
 
   // mobile
   &__header {
-    padding: 1.5rem 8rem 1rem 1rem;
+
+    padding: 1.5rem 8rem 1rem 1.25rem;
     @include mobile-bold;
 
     // tablet
@@ -303,47 +316,54 @@
   &__img {
     max-width: 100%;
     height: auto;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
 
     @include tablet {
       width: 33%;
-    }
-  }
-
-  &__header {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: $black;
-    line-height: 2rem;
-    padding: 1.5rem 0 1rem 1rem;
-
-    @include tablet {
-      @include large-section;
-      padding: 3rem 0 1rem 2.25rem;
-    }
-
-    @include desktop {
-      padding-left: 9rem;
-    }
-  }
-
-  // mobile
-  &__text {
-    display: flex;
-    justify-content: center;
-
-    @include tablet {
-      justify-content: flex-start;
-      margin-left: 5rem;
-    }
-
-    @include desktop {
-      margin-left: 24rem;
-
+      padding: 0 1rem 1rem 1rem;
     }
   }
 
 }
+
+// mobile
+
+
+.conversation__header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $black;
+  line-height: 2rem;
+  padding: 1.5rem 0 1rem 2rem;
+
+
+  @include tablet {
+    @include large-section;
+
+  }
+
+  @include desktop {
+    padding: 3rem 0 2rem 9rem;
+  }
+}
+
+// mobile
+.conversation__text {
+  display: flex;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: flex-start;
+    margin-left: 5rem;
+  }
+
+  @include desktop {
+    margin-left: 26rem;
+
+  }
+}
+
+
 
 #form {
 
@@ -354,8 +374,8 @@
 
 // mobile
 .conversation__text--avatar {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   margin-left: 1rem;
   margin-top: 1.375rem;
@@ -385,46 +405,59 @@
     font-size: .75rem;
   }
 
+  @include desktop {
+    margin-left: 0;
+  }
+
 }
 
 .conversation__text--name {
-  width: 100%;
-  min-width: 10rem;
+  width: 12rem;
   height: 2.25rem;
   border-radius: .25rem;
   padding-left: .75rem;
   margin-bottom: 1.5rem;
   border: 1px solid $mercury;
   text-align: left;
+  resize: none;
 
   @include tablet {
-    min-width: 31rem;
+    width: 31rem;
+    margin-left: 0;
+    width: 36.25rem;
 
   }
 
   @include desktop {
-    min-width: 28rem;
+    width: 31rem;
   }
 }
 
-input:invalid {
-  border: 1px solid red;
-}
 
 .conversation__text--comment {
-  width: 100%;
+
   height: 7rem;
   border-radius: .25rem;
   padding: .75rem;
   margin-bottom: 1rem;
   border: 1px solid $mercury;
+  resize: none;
+
+  @include tablet {
+    margin-left: 0;
+    width: 36.25rem;
+  }
+
+  @include desktop {
+    width: 31rem;
+  }
 }
 
 ::placeholder {
   color: $black;
   font-size: 1rem;
   font-weight: 400;
-  font-family: avenir;
+  font-family: AvenirNext;
 
 }
 
@@ -450,9 +483,6 @@ input:invalid {
   }
 }
 
-.input-field input[type=text]:invalid {
-  border: red;
-}
 
 .comments__box {
   display: flex;
@@ -470,8 +500,8 @@ input:invalid {
   }
 
   @include desktop {
-    margin-left: 25rem;
-    margin-right: 29rem;
+    margin-left: 27rem;
+    margin-right: 27rem;
 
   }
 }
@@ -556,16 +586,26 @@ input:invalid {
     @include tablet {
       @include large-section;
       padding-left: 2.25rem;
+      padding-top: 3rem;
+    }
+
+    @include desktop {
+      padding-top: 2rem;
     }
   }
 
   // mobile
   &__social {
-    padding: 0 0 1rem 1rem;
+    padding: .5rem 0 .5rem 1rem;
 
     // tablet
     @include tablet {
-      padding: 2.25rem 0 0 2.25rem;
+      padding: 4rem 0 0 2.25rem;
+    }
+
+    @include desktop {
+      padding-top: 2.85rem;
+      padding-left: 3rem;
     }
   }
 
@@ -578,6 +618,7 @@ input:invalid {
     padding-bottom: 1rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
+
 
     // tablet
     @include tablet {
@@ -596,16 +637,33 @@ input:invalid {
     padding-bottom: 1rem;
     padding-left: 0;
     @include mobile-body;
+
+
+    // tablet
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      padding-right: 5rem;
+      @include large-footer;
+    }
+
   }
 
-  // tablet
-  @include tablet {
-    display: flex;
-    flex-direction: column;
-    padding-right: 5rem;
-    @include large-footer;
-  }
+  &__contact--bold {
+    padding-bottom: 1rem;
+    padding-left: 0;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.125rem;
 
+    // tablet
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      padding-right: 5rem;
+      @include large-footer;
+    }
+  }
 
   &__contact--logo {
     padding-top: 4rem;
@@ -614,7 +672,7 @@ input:invalid {
       position: absolute;
       top: 0;
       right: 2.0625rem;
-      padding-top: 2rem;
+      padding-top: 4rem;
     }
 
     // desktop

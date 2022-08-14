@@ -22,22 +22,20 @@
     width: 30%;
     margin: auto;
     margin-top: 1.25rem;
+    margin-left: 7.5rem;
 
 
     // tablet
     @include tablet {
-      margin-left: 3rem;
-      padding-bottom: 2rem;
-      padding-top: 0.5rem;
-      margin-right: 0;
-      width: 20%;
+      margin: 2rem 2rem 0 3rem;
+      width: 80%;
     }
 
     // desktop
     @include desktop {
-      width: 15%;
-      padding-left: 7rem;
-      margin-bottom: -1.5rem;
+      width: 80%;
+      padding-left: 6rem;
+      margin-top: 2.5rem;
     }
   }
 
@@ -45,19 +43,27 @@
     // mobile
     display: flex;
     justify-content: space-between;
-    padding: 1rem 4rem 0 0;
+    padding: 1rem 2rem 0 0;
 
     // tablet
     @include tablet {
       padding: 2.5rem 5rem 0 0;
     }
+
   }
 
   &__tab {
     text-decoration: none;
     padding-left: 3rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     color: $mercury;
+
+
+    @include desktop {
+      padding-bottom: 2rem;
+      margin-right: 0;
+    }
+
   }
 
   &__tab--active {
@@ -65,7 +71,8 @@
     color: $white;
     font-weight: 700;
     border-bottom: 3px solid $white;
-    padding-right: 2rem;
+    padding-right: 3.25rem;
+    margin-left: 2.75rem;
 
     // tablet
     @include tablet {
@@ -81,8 +88,9 @@
 
 }
 
-// mobile
 
+
+// mobile
 .hero {
   width: 100%;
   background: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../Assets/Images/hero-shows.jpg);
@@ -93,6 +101,7 @@
   @include desktop {
     display: flex;
     justify-content: space-around;
+    height: 100vh;
   }
 
 
@@ -108,8 +117,8 @@
     @include desktop {
       display: flex;
       flex-direction: column;
-      padding-left: 5rem;
-      padding-top: 4rem;
+      padding-left: 8rem;
+      padding-top: 13rem;
       padding-bottom: 2rem;
 
     }
@@ -119,8 +128,10 @@
     color: $white;
     font-size: 1.25rem;
     font-weight: 400;
+    padding: 1.5rem 0 1.5rem .5rem;
 
     @include tablet {
+      padding-left: 1.5rem;
       @include large-subheader
     }
   }
@@ -130,18 +141,18 @@
     line-height: 2rem;
     font-weight: 700;
     color: $white;
-    padding-right: 6rem;
-    padding-bottom: 2rem;
+    padding: 0 6rem 2rem .5rem;
 
     @include tablet {
-      padding-right: 20rem;
+
       padding-bottom: 2.5rem;
+      padding: 0 15rem 2.5rem 1rem;
 
       @include large-header
     }
 
     @include desktop {
-      padding-right: 5rem;
+      padding-right: 14rem;
       padding-top: 0;
       padding-bottom: 8rem;
     }
@@ -153,15 +164,19 @@
     border-radius: 4px;
 
     @include tablet {
-      width: 50%;
+      width: 60%;
       height: 170px;
       padding-left: 3rem;
       padding-bottom: 3rem;
     }
 
     @include desktop {
-      width: 70%;
-      margin-top: 13rem;
+      width: 100%;
+      height: 230px;
+      margin-top: 20rem;
+      margin-right: 30rem;
+
+
     }
   }
 }
@@ -172,11 +187,12 @@
 
   @include desktop {
     padding-left: 7.5rem;
-    padding-right: 7rem
+    padding-right: 7rem;
+
   }
 
 
-  &__title {
+  .shows__title {
     @include mobile-bold;
     padding: 1.5rem 0 1rem 0;
 
@@ -184,9 +200,13 @@
       margin-left: 2rem;
       @include large-section;
     }
+
+    @include desktop {
+      padding-top: 2rem;
+    }
   }
 
-  &__container {
+  .shows__container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -209,35 +229,46 @@
       padding-right: 1.75rem;
       font-size: 1rem;
     }
+
+    @include desktop {
+      margin-left: 15rem;
+
+    }
+
+
   }
 
-  &__container--active {
+  .shows__container--active {
     background-color: $mercury;
   }
 
-  &__container:hover {
+  .shows__container:hover {
     background-color: $alabaster;
   }
 
-  &__info {
+  .shows__info {
     padding-left: 0;
     padding-bottom: .75rem;
 
   }
 
-  &__labels {
+  .shows__labels {
     display: none;
 
     @include tablet {
       display: flex;
       justify-content: space-between;
-      padding-right: 30rem;
+      padding-right: 21rem;
       padding-left: 2rem;
+    }
 
+    @include desktop {
+      width: 0;
+      margin-left: 15rem;
     }
   }
 
-  &__info--label {
+  .shows__info--label {
     text-transform: uppercase;
     color: $mercury;
     font-size: 0.625rem;
@@ -249,9 +280,15 @@
       font-size: .75rem;
       line-height: 20px;
     }
+
+    @include desktop {
+      padding-right: 13rem;
+
+    }
   }
 
-  &__info--labelHide {
+
+  .shows__info--label-hide {
     text-transform: uppercase;
     color: $mercury;
     font-size: 0.625rem;
@@ -264,7 +301,7 @@
     }
   }
 
-  &__info--date {
+  .shows__info--date {
     font-weight: 700;
     font-size: .8125rem;
     line-height: 1.125rem;
@@ -275,7 +312,7 @@
     }
   }
 
-  &__button {
+  .shows__button {
 
     text-decoration: none;
     text-transform: uppercase;
@@ -321,7 +358,7 @@
   }
 
   // mobile
-  &__container--heading {
+  &__container--title {
     @include mobile-bold;
     padding: 1.5rem 0 1rem 1rem;
 
@@ -339,6 +376,10 @@
     // tablet
     @include tablet {
       padding: 2.25rem 0 0 2.25rem;
+    }
+
+    @include desktop {
+      padding-left: 3.25rem;
     }
   }
 
@@ -378,28 +419,25 @@
       @include large-footer;
     }
   }
-
-
-
-  &__contact--logo {
-    padding-top: 4rem;
-
-    @include tablet {
-      position: absolute;
-      top: 0;
-      right: 2.0625rem;
-      padding-top: 2rem;
-    }
-
-    // desktop
-    @include desktop {
-      padding-top: 4rem;
-      right: 10rem;
-    }
-  }
 }
-
 
 span {
   text-transform: uppercase;
+}
+
+.footer__contact--logo {
+  padding-top: 4rem;
+
+  @include tablet {
+    position: absolute;
+    top: 0;
+    right: 2.0625rem;
+    padding-top: 2rem;
+  }
+
+  // desktop
+  @include desktop {
+    padding-top: 4rem;
+    right: 10rem;
+  }
 }

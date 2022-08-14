@@ -1,52 +1,29 @@
 // Regular
+
 @font-face {
-  font-family: AvenirNext;
-  src: url("./Assets/Font/AvenirNextLTPro-Regular.otf");
+  font-family: "AvenirNext";
+
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+
   font-weight: 400;
-  font-style: normal;
 }
 
 // Bold
+
 @font-face {
-  font-family: AvenirNext;
-  src: url("./Assets/Font/AvenirNextLTPro-Bold.otf");
+  font-family: "AvenirNext";
+
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+
   font-weight: 700;
-  font-style: normal;
 }
 
-// Demi
+//Demi
+
 @font-face {
-  font-family: AvenirNext;
-  src: url("/Assets/Font/AvenirNextLTPro-Demi.otf");
+  font-family: "AvenirNext";
+
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+
   font-weight: 600;
-  font-style: normal;
 }
-
-
-
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("/Assets/Font/Alternative\ files/AvenirNextLTPro-Regular.woff2") format("woff2"),
-//     url("/Assets/Font/Alternative\ files/AvenirNextLTPro-Regular.woff") format("woff"),
-//     url("/Assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
-// }
-
-// // Bold
-
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff2") format("woff2"),
-//     url("/Assets/Font/Alternative files/AvenirNextLTPro-Bold.woff") format("woff"),
-//     url("/Assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
-//   font-style: bold;
-// }
-
-// //Demi
-
-// @font-face {
-//   font-family: "AvenirNext";
-//   src: url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff2") format("woff2"),
-//     url("/Assets/Font/Alternative files/AvenirNextLTPro-Demi.woff") format("woff"),
-//     url("/Assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
-//   font-weight: demi;
-// }
