@@ -4,8 +4,85 @@
 @use "./partials/breakpoints" as *;
 @use "./partials/mixins" as *;
 
+.navigation {
+  // mobile
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+
+  // tablet
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+  }
+
+
+  &__logo {
+    // mobile
+    width: 30%;
+    margin: auto;
+    margin-top: 1.25rem;
+
+
+    // tablet
+    @include tablet {
+      margin-left: 3rem;
+      padding-bottom: 2rem;
+      padding-top: 0.5rem;
+      margin-right: 0;
+      width: 20%;
+    }
+
+    // desktop
+    @include desktop {
+      width: 15%;
+      padding-left: 7rem;
+      margin-bottom: -1.5rem;
+    }
+  }
+
+  &__sub {
+    // mobile
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem 0 0;
+
+    // tablet
+    @include tablet {
+      padding: 2.5rem 5rem 0 0;
+    }
+  }
+
+  &__tab {
+    text-decoration: none;
+    padding-left: 3rem;
+    padding-bottom: 1rem;
+    color: $mercury;
+  }
+
+  &__tab--active {
+    // mobile
+    color: $white;
+    font-weight: 700;
+    border-bottom: 3px solid $white;
+    padding-right: 2rem;
+
+    // tablet
+    @include tablet {
+      padding-right: 0;
+      padding-left: 0;
+      margin-left: 3rem;
+    }
+  }
+
+  a:visited {
+    color: $white;
+  }
+
+}
 
 // mobile
+
 .hero {
   width: 100%;
   background: linear-gradient(rgba($black, 0.5), rgba($black, 0.5)), url(../Assets/Images/hero-shows.jpg);
@@ -218,108 +295,111 @@
   }
 }
 
-// .footer {
-//   background-color: $black;
-//   color: $white;
+.footer {
+  background-color: $black;
+  color: $white;
 
-//   @include tablet {
-//     position: relative;
-//   }
+  @include tablet {
+    position: relative;
+  }
 
 
 
-//   // tablet
-//   &__container {
-//     @include tablet {
-//       display: flex;
-//       justify-content: flex-start;
-//       padding-left: 0;
-//     }
+  // tablet
+  &__container {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 0;
+    }
 
-//     // desktop
-//     @include desktop {
-//       padding-top: 2rem;
-//       padding-left: 7rem;
-//     }
-//   }
+    // desktop
+    @include desktop {
+      padding-top: 2rem;
+      padding-left: 7rem;
+    }
+  }
 
-//   // mobile
-//   &__container--heading {
-//     @include mobile-bold;
-//     padding: 1.5rem 0 1rem 1rem;
+  // mobile
+  &__container--heading {
+    @include mobile-bold;
+    padding: 1.5rem 0 1rem 1rem;
 
-//     // tablet
-//     @include tablet {
-//       @include large-section;
-//       padding-left: 2.25rem;
-//     }
-//   }
+    // tablet
+    @include tablet {
+      @include large-section;
+      padding-left: 2.25rem;
+    }
+  }
 
-//   // mobile
-//   &__social {
-//     padding: 0 0 1rem 1rem;
+  // mobile
+  &__social {
+    padding: 0 0 1rem 1rem;
 
-//     // tablet
-//     @include tablet {
-//       padding: 2.25rem 0 0 2.25rem;
-//     }
-//   }
+    // tablet
+    @include tablet {
+      padding: 2.25rem 0 0 2.25rem;
+    }
+  }
 
-//   &__icon {
-//     padding-right: 1.5rem;
-//   }
+  &__icon {
+    padding-right: 1.5rem;
+  }
 
-//   // mobile
-//   &__contact {
-//     padding-bottom: 1rem;
-//     padding-left: 1rem;
-//     padding-top: 0.5rem;
+  // mobile
+  &__contact {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
 
-//     // tablet
-//     @include tablet {
-//       display: flex;
-//       padding-left: 2.25rem;
-//     }
+    // tablet
+    @include tablet {
+      display: flex;
+      padding-left: 2.25rem;
+    }
 
-//     // desktop
-//     @include desktop {
-//       padding-bottom: 2rem;
-//       padding-left: 9rem;
-//     }
-//   }
+    // desktop
+    @include desktop {
+      padding-bottom: 2rem;
+      padding-left: 9rem;
+    }
+  }
 
-//   &__contact--name {
-//     padding-bottom: 1rem;
-//     padding-left: 0;
-//     @include mobile-body;
+  &__contact--name {
+    padding-bottom: 1rem;
+    padding-left: 0;
+    @include mobile-body;
 
-//     // tablet
-//     @include tablet {
-//       display: flex;
-//       flex-direction: column;
-//       padding-right: 5rem;
-//       @include large-footer;
-//     }
-//   }
-// }
+    // tablet
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      padding-right: 5rem;
+      @include large-footer;
+    }
+  }
 
-// span {
-//   text-transform: uppercase;
-// }
 
-// &__contact--logo {
-//   padding-top: 4rem;
 
-//   @include tablet {
-//     position: absolute;
-//     top: 0;
-//     right: 2.0625rem;
-//     padding-top: 2rem;
-//   }
+  &__contact--logo {
+    padding-top: 4rem;
 
-//   // desktop
-//   @include desktop {
-//     padding-top: 4rem;
-//     right: 10rem;
-//   }
-// }
+    @include tablet {
+      position: absolute;
+      top: 0;
+      right: 2.0625rem;
+      padding-top: 2rem;
+    }
+
+    // desktop
+    @include desktop {
+      padding-top: 4rem;
+      right: 10rem;
+    }
+  }
+}
+
+
+span {
+  text-transform: uppercase;
+}
